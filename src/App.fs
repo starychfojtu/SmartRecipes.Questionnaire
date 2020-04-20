@@ -14,10 +14,16 @@ type Page =
     | Scenario of int
     | End
 
+type MethodIndex = {
+    MethodId: RecommendationMethodId
+    ScenarionIndex: int
+}
+
 type State = {
     User: User
     Scenarios: RecommendationScenario array
     SelectedRecipeIds: Set<RecipeId>
+    MethodRatings: Map<MethodIndex, MethodOpinion>
     CurrentPage: Page
     StartUtc: DateTime
 }
@@ -28,6 +34,7 @@ type Msg =
     | NameChanged of string
     | Start
     | ToggleRecipe of RecipeId
+    | RateMethod of MethodIndex * MethodOpinion
     | FinishScenario of int
 
 let loadData () =
@@ -41,6 +48,7 @@ let init =
         }
         Scenarios = [||]
         SelectedRecipeIds = Set.empty
+        MethodRatings = Map.empty
         CurrentPage = Intro
         StartUtc = DateTime.UtcNow
     }
@@ -83,6 +91,8 @@ let update (msg: Msg) (state: State) =
                 else Set.add recipeId state.SelectedRecipeIds
 
         ({ state with SelectedRecipeIds = newSelectedRecipeIds }, Cmd.none)
+    | RateMethod (index, opinion) ->
+        ({ state with MethodRatings = Map.add index opinion state.MethodRatings }, Cmd.none)
 
 module Html =
     let styledDiv (className: string) (children: ReactElement seq) =

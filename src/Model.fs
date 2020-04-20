@@ -38,6 +38,11 @@ type User = {
     Name: string
 }
 
+type MethodOpinion =
+    | None
+    | Bad
+    | Good
+
 type Interaction = Liked | Disliked
 
 type MousePosition = {
