@@ -291,7 +291,18 @@ let scenarioPage dispatch index scenario selectedRecipeIds methodRatings =
     ]
 
 let lastPage =
-    Html.h1 "Thank you for your time!"
+    Html.div [
+        prop.className "container"
+        prop.style [
+            style.paddingTop (length.perc 10)
+        ]
+        prop.children [
+            Html.styledDiv "row" [
+                Html.h1 "That it is ! Thank you for your time!"
+            ]
+        ]
+    ]
+
 
 let render (state: State) (dispatch: Msg -> unit) =
     match state.CurrentPage with
