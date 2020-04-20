@@ -9,6 +9,7 @@ open System
 open FSharp.Core
 open Fable.Core
 open Fable.Core
+open Fable.React.Props
 open Feliz
 open Fetch
 
@@ -63,8 +64,13 @@ let update (msg: Msg) (state: State) =
         if Array.length state.Scenarios >= index
             then ({ state with CurrentPage = End }, Cmd.none)
             else ({ state with CurrentPage = (Scenario <| index + 1) }, Cmd.none)
-    | ToggleRecipe _ ->
-        (state, Cmd.none)
+    | ToggleRecipe recipeId ->
+        let newSelectedRecipeIds =
+            if Set.contains recipeId state.SelectedRecipeIds
+                then Set.remove recipeId state.SelectedRecipeIds
+                else Set.add recipeId state.SelectedRecipeIds
+
+        ({ state with SelectedRecipeIds = newSelectedRecipeIds }, Cmd.none)
 
 module Html =
     let styledDiv (className: string) (children: ReactElement seq) =
@@ -87,29 +93,75 @@ let initPage dispatch =
     ]
 
 let renderIngredient ingredient =
-    Html.listItem ingredient.DisplayLine
+    Html.div [
+        if ingredient.IsInputMatch
+            then Html.strong ingredient.DisplayLine
+            else Html.text ingredient.DisplayLine
+    ]
 
-let renderRecipe (recipe: Recipe) isSelected =
+let renderRecipe dispatch (recipe: Recipe) isSelected =
     let (cardClass, headerClass) =
         if isSelected
-            then "card border-success", "card-header border-success text-success"
+            then "card border-success", "card-header text-white bg-success"
             else "card", "card-header"
 
-    Html.styledDiv cardClass [
-        Html.div [
-            prop.className headerClass
-            prop.text recipe.Name
+    let imageUrl = "https://images.media-allrecipes.com/userphotos/560x315/225773.jpg"
+
+    Html.div [
+        prop.className cardClass
+        prop.onClick (fun _ -> dispatch <| ToggleRecipe recipe.Id)
+        prop.style [
+            style.cursor "pointer"
+            style.margin (25, 0)
         ]
-        Html.styledDiv "card-body" [
-            Html.unorderedList (recipe.Ingredients |> Array.sortByDescending (fun i -> i.IsInputMatch) |> Array.map renderIngredient)
+        prop.children [
+            Html.div [
+                prop.className headerClass
+                prop.text recipe.Name
+            ]
+            Html.img [
+                prop.src imageUrl
+                prop.className "card-img"
+                prop.alt recipe.Name
+            ]
+            Html.div [
+                prop.className "card-body"
+                prop.children [
+                    for i in recipe.Ingredients do
+                        renderIngredient i
+
+                    Html.div [
+                        prop.style [
+                            style.marginTop 25
+                        ]
+                        prop.children [
+                            Html.a [
+                                prop.href recipe.Uri
+                                prop.target "blank"
+                                prop.onClick (fun e -> e.stopPropagation ())
+                                prop.text "See whole recipe"
+                            ]
+                        ]
+                    ]
+                ]
+            ]
         ]
     ]
 
-let renderMethod (method: RecommendationMethod) selectedRecipeIds =
+let methodAliases = Map.ofList [
+    ("f2v-256-10-tf-idf-cal", "Alpha")
+    ("f2v-256-10-tf-idf-mmr", "Beta")
+    ("tf-idf-cal", "Gamma")
+    ("tf-idf-mmr", "Delta")
+    ("tf-idf", "Epsilon")
+    ("f2v-256-10", "Zeta")
+]
+
+let renderMethod dispatch (method: RecommendationMethod) selectedRecipeIds =
     Html.styledDiv "col-2" [
-        Html.h3 method.Name
+        Html.h3 (Map.find method.Id methodAliases)
         for recipe in method.Recommendations do
-            renderRecipe recipe (Set.contains recipe.Id selectedRecipeIds)
+            renderRecipe dispatch recipe (Set.contains recipe.Id selectedRecipeIds)
     ]
 
 let allowedMethodIds = [
@@ -132,9 +184,10 @@ let scenarioPage dispatch index scenario selectedRecipeIds =
         Html.unorderedList (scenario.Input |> Array.map Html.listItem)
 
         Html.styledDiv "row" [
+            // TODO: randomize order.
             for method in scenario.Recommendations do
                 if showMethod method then
-                    renderMethod method selectedRecipeIds
+                    renderMethod dispatch method selectedRecipeIds
         ]
 
         Html.button [
