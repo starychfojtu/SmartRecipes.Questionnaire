@@ -4,7 +4,9 @@ open Elmish
 open Elmish.React
 open Model
 open System
+open System
 open FSharp.Core
+open Fable.Core
 open Fable.Core
 open Feliz
 open Fetch
@@ -53,9 +55,6 @@ let update (msg: Msg) (state: State) =
     | NameChanged name ->
         ({ state with User = { state.User with Name = name } }, Cmd.none)
     | Start ->
-        JS.console.log state.Scenarios
-        JS.console.log (Array.isEmpty state.Scenarios)
-        JS.console.log (Array.length state.Scenarios)
         if Array.isEmpty state.Scenarios
             then ({ state with CurrentPage = End }, Cmd.none)
             else ({ state with CurrentPage = (Scenario 0) }, Cmd.none)
@@ -79,9 +78,36 @@ let initPage dispatch =
         ]
     ]
 
-let scenarioPage dispatch index scenario (userName: string) =
+let renderIngredient ingredient =
+    Html.listItem ingredient.DisplayLine
+
+let renderRecipe (recipe: Recipe) =
     Html.div [
-        Html.h1 userName
+        Html.anchor [
+            prop.href recipe.Uri
+            prop.children [
+                Html.h4 recipe.Name
+            ]
+        ]
+        Html.unorderedList (recipe.Ingredients |> Array.map renderIngredient)
+    ]
+
+let renderMethod (method: RecommendationMethod) =
+    Html.div [
+        Html.h3 method.Name
+        for recipe in method.Recommendations do
+            renderRecipe recipe
+    ]
+
+let scenarioPage dispatch index scenario =
+    Html.div [
+        Html.paragraph scenario.Description
+        Html.h3 "Your basket contains:"
+        Html.unorderedList (scenario.Input |> Array.map Html.listItem)
+
+        for method in scenario.Recommendations do
+            renderMethod method
+
         Html.button [
             prop.onClick (fun _ -> dispatch <| FinishScenario index)
             prop.text "Next"
@@ -96,7 +122,7 @@ let render (state: State) (dispatch: Msg -> unit) =
     | Intro -> initPage dispatch
     | Scenario index ->
         let scenario = state.Scenarios.[index]
-        scenarioPage dispatch index scenario state.User.Name
+        scenarioPage dispatch index scenario
     | End -> lastPage
 
 Program.mkProgram (fun _ -> (init, Cmd.ofMsg LoadData)) update render

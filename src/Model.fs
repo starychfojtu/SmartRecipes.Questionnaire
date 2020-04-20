@@ -13,7 +13,7 @@ type Recipe = {
     Id: RecipeId
     Uri: string // TODO: Should be System.Uri.
     Name: string
-    Ingredients: Ingredient list
+    Ingredients: Ingredient array
 }
 
 type RecommendationMethodId = string
@@ -21,15 +21,15 @@ type RecommendationMethodId = string
 type RecommendationMethod = {
     Id: RecommendationMethodId
     Name: string
-    Recommendations: Recipe list
+    Recommendations: Recipe array
 }
 
-type Input = string list
+type Input = string array
 
 type RecommendationScenario = {
     Description: string
     Input: Input
-    Recommendations: RecommendationMethod list
+    Recommendations: RecommendationMethod array
 }
 
 type User = {
