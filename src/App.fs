@@ -10,20 +10,22 @@ open FSharp.Core
 open Feliz
 open Fetch
 
+type ScenarioIndex = int
+
 type Page =
     | Intro
-    | Scenario of int
+    | Scenario of ScenarioIndex
     | End
 
 type MethodIndex = {
     MethodId: RecommendationMethodId
-    ScenarionIndex: int
+    ScenarioIndex: ScenarioIndex
 }
 
 type State = {
     User: User
     Scenarios: RecommendationScenario array
-    SelectedRecipeIds: Set<RecipeId>
+    SelectedRecipeIds: Map<ScenarioIndex, Set<RecipeId>>
     MethodRatings: Map<MethodIndex, MethodOpinion>
     CurrentPage: Page
     StartUtc: DateTime
@@ -34,7 +36,7 @@ type Msg =
     | DataLoaded of RecommendationScenario array
     | NameChanged of string
     | Start
-    | ToggleRecipe of RecipeId
+    | ToggleRecipe of ScenarioIndex * RecipeId
     | RateMethod of MethodIndex * MethodOpinion
     | FinishScenario of int
 
@@ -48,7 +50,7 @@ let init =
             Name = "anonymous"
         }
         Scenarios = [||]
-        SelectedRecipeIds = Set.empty
+        SelectedRecipeIds = Map.empty
         MethodRatings = Map.empty
         CurrentPage = Intro
         StartUtc = DateTime.UtcNow
@@ -73,7 +75,8 @@ let update (msg: Msg) (state: State) =
         (state, Cmd.OfPromise.either loadData () DataLoaded (fun error -> DataLoaded [||]))
     | DataLoaded scenarios ->
         let randomizedScenarios = scenarios |> Array.map (fun s -> { s with Recommendations = randomize s.Recommendations |> Seq.toArray })
-        ({ state with Scenarios = randomizedScenarios }, Cmd.none)
+        let emptySelectedRecipes = scenarios |> Array.mapi (fun index _ -> (index, Set.empty)) |> Map.ofArray
+        ({ state with Scenarios = randomizedScenarios; SelectedRecipeIds = emptySelectedRecipes }, Cmd.none)
     | NameChanged name ->
         ({ state with User = { state.User with Name = name } }, Cmd.none)
     | Start ->
@@ -85,13 +88,14 @@ let update (msg: Msg) (state: State) =
         if (Array.length state.Scenarios) <= index + 1
             then ({ state with CurrentPage = End }, Cmd.none)
             else ({ state with CurrentPage = (Scenario <| index + 1) }, Cmd.none)
-    | ToggleRecipe recipeId ->
+    | ToggleRecipe (index, recipeId) ->
+        let selectedRecipeIds = Map.find index state.SelectedRecipeIds
         let newSelectedRecipeIds =
-            if Set.contains recipeId state.SelectedRecipeIds
-                then Set.remove recipeId state.SelectedRecipeIds
-                else Set.add recipeId state.SelectedRecipeIds
+            if Set.contains recipeId selectedRecipeIds
+                then Set.remove recipeId selectedRecipeIds
+                else Set.add recipeId selectedRecipeIds
 
-        ({ state with SelectedRecipeIds = newSelectedRecipeIds }, Cmd.none)
+        ({ state with SelectedRecipeIds = Map.add index newSelectedRecipeIds state.SelectedRecipeIds }, Cmd.none)
     | RateMethod (index, opinion) ->
         ({ state with MethodRatings = Map.add index opinion state.MethodRatings }, Cmd.none)
 
@@ -142,7 +146,7 @@ let renderIngredient ingredient =
             else Html.text ingredient.DisplayLine
     ]
 
-let renderRecipe dispatch (recipe: Recipe) isSelected =
+let renderRecipe dispatch index (recipe: Recipe) isSelected =
     let (cardClass, headerClass) =
         if isSelected
             then "card border-success", "card-header text-white bg-success"
@@ -150,7 +154,7 @@ let renderRecipe dispatch (recipe: Recipe) isSelected =
 
     Html.div [
         prop.className cardClass
-        prop.onClick (fun _ -> dispatch <| ToggleRecipe recipe.Id)
+        prop.onClick (fun _ -> dispatch <| ToggleRecipe (index, recipe.Id))
         prop.style [
             style.cursor "pointer"
             style.margin (25, 0)
@@ -198,11 +202,11 @@ let methodAliases = Map.ofList [
     ("f2v-256-10", "Zeta")
 ]
 
-let renderMethod dispatch (method: RecommendationMethod) selectedRecipeIds =
+let renderMethod dispatch index (method: RecommendationMethod) selectedRecipeIds =
     Html.styledDiv "col-2" [
         Html.h3 (Map.find method.Id methodAliases)
         for recipe in method.Recommendations do
-            renderRecipe dispatch recipe (Set.contains recipe.Id selectedRecipeIds)
+            renderRecipe dispatch index recipe (Set.contains recipe.Id selectedRecipeIds)
     ]
 
 let renderMethodRating dispatch methodIndex (method: RecommendationMethod) (currentOpinion: MethodOpinion option) =
@@ -260,7 +264,7 @@ let scenarioPage dispatch index scenario selectedRecipeIds methodRatings =
 
             Html.styledDiv "row" [
                 for method in methods do
-                    renderMethod dispatch method selectedRecipeIds
+                    renderMethod dispatch index method selectedRecipeIds
             ]
         ]
         Html.footer [
@@ -276,7 +280,7 @@ let scenarioPage dispatch index scenario selectedRecipeIds methodRatings =
                 Html.styledDiv "row" [
                     for method in methods do
                         let methodIndex = {
-                            ScenarionIndex = index
+                            ScenarioIndex = index
                             MethodId = method.Id
                         }
                         renderMethodRating dispatch methodIndex method (Map.tryFind methodIndex methodRatings)
@@ -309,7 +313,7 @@ let render (state: State) (dispatch: Msg -> unit) =
     | Intro -> initPage dispatch
     | Scenario index ->
         let scenario = state.Scenarios.[index]
-        scenarioPage dispatch index scenario state.SelectedRecipeIds state.MethodRatings
+        scenarioPage dispatch index scenario (Map.find index state.SelectedRecipeIds) state.MethodRatings
     | End -> lastPage
 
 Program.mkProgram (fun _ -> (init, Cmd.ofMsg LoadData)) update render
