@@ -2,9 +2,12 @@ module App
 
 open Elmish
 open Elmish.React
-open Feliz
 open Model
 open System
+open FSharp.Core
+open Fable.Core
+open Feliz
+open Fetch
 
 type Page =
     | Intro
@@ -12,46 +15,56 @@ type Page =
     | End
 
 type State = {
-    Count: int
     User: User
-    Scenarios: RecommendationScenario list
+    Scenarios: RecommendationScenario array
     LikedRecipeIds: Set<RecipeId>
     CurrentPage: Page
     StartUtc: DateTime
 }
 
 type Msg =
+    | LoadData
+    | DataLoaded of RecommendationScenario array
     | NameChanged of string
     | Start
     | ToggleRecipe of RecipeId
     | FinishScenario of int
 
-let init() =
+let loadData () =
+    fetch "data.json" [] |> Promise.bind (fun r -> r.json<RecommendationScenario array>())
+
+let init =
     {
-        Count = 0
         User = {
             Name = "anonymous"
         }
-        Scenarios = loadFrom "data.json"
+        Scenarios = [||]
         LikedRecipeIds = Set.empty
         CurrentPage = Intro
         StartUtc = DateTime.UtcNow
     }
 
-let update (msg: Msg) (state: State): State =
+let update (msg: Msg) (state: State) =
     match msg with
+    | LoadData ->
+        (state, Cmd.OfPromise.either loadData () DataLoaded (fun error -> DataLoaded [||]))
+    | DataLoaded scenarios ->
+        ({ state with Scenarios = scenarios }, Cmd.none)
     | NameChanged name ->
-        { state with User = { state.User with Name = name } }
+        ({ state with User = { state.User with Name = name } }, Cmd.none)
     | Start ->
-        if List.isEmpty state.Scenarios
-            then { state with CurrentPage = End }
-            else { state with CurrentPage = (Scenario 0) }
+        JS.console.log state.Scenarios
+        JS.console.log (Array.isEmpty state.Scenarios)
+        JS.console.log (Array.length state.Scenarios)
+        if Array.isEmpty state.Scenarios
+            then ({ state with CurrentPage = End }, Cmd.none)
+            else ({ state with CurrentPage = (Scenario 0) }, Cmd.none)
     | FinishScenario index ->
-        if List.length state.Scenarios >= index
-            then { state with CurrentPage = End }
-            else { state with CurrentPage = (Scenario <| index + 1) }
+        if Array.length state.Scenarios >= index
+            then ({ state with CurrentPage = End }, Cmd.none)
+            else ({ state with CurrentPage = (Scenario <| index + 1) }, Cmd.none)
     | ToggleRecipe _ ->
-        { state with Count = state.Count - 3 }
+        (state, Cmd.none)
 
 let initPage dispatch =
     Html.div [
@@ -86,6 +99,6 @@ let render (state: State) (dispatch: Msg -> unit) =
         scenarioPage dispatch index scenario state.User.Name
     | End -> lastPage
 
-Program.mkSimple init update render
+Program.mkProgram (fun _ -> (init, Cmd.ofMsg LoadData)) update render
 |> Program.withReactSynchronous "elmish-app"
 |> Program.run

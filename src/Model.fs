@@ -11,7 +11,7 @@ type RecipeId = string
 
 type Recipe = {
     Id: RecipeId
-    Uri: Uri
+    Uri: string // TODO: Should be System.Uri.
     Name: string
     Ingredients: Ingredient list
 }
@@ -62,7 +62,3 @@ type InteractionEvent = {
     UserName: string
     Metadata: Metadata
 }
-
-let loadFrom (file: string): RecommendationScenario list =
-    // TODO: Get real data here.
-    []
