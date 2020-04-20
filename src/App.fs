@@ -6,12 +6,17 @@ open Feliz
 open Model
 open System
 
+type Page =
+    | Intro
+    | Scenario of int
+    | End
+
 type State = {
     Count: int
     User: User
     Scenarios: RecommendationScenario list
     LikedRecipeIds: Set<RecipeId>
-    CurrentScenarioIndex: int option
+    CurrentPage: Page
     StartUtc: DateTime
 }
 
@@ -19,6 +24,7 @@ type Msg =
     | NameChanged of string
     | Start
     | ToggleRecipe of RecipeId
+    | FinishScenario of int
 
 let init() =
     {
@@ -28,7 +34,7 @@ let init() =
         }
         Scenarios = loadFrom "data.json"
         LikedRecipeIds = Set.empty
-        CurrentScenarioIndex = None
+        CurrentPage = Intro
         StartUtc = DateTime.UtcNow
     }
 
@@ -37,7 +43,13 @@ let update (msg: Msg) (state: State): State =
     | NameChanged name ->
         { state with User = { state.User with Name = name } }
     | Start ->
-        { state with CurrentScenarioIndex = (Some 0) }
+        if List.isEmpty state.Scenarios
+            then { state with CurrentPage = End }
+            else { state with CurrentPage = (Scenario 0) }
+    | FinishScenario index ->
+        if List.length state.Scenarios >= index
+            then { state with CurrentPage = End }
+            else { state with CurrentPage = (Scenario <| index + 1) }
     | ToggleRecipe _ ->
         { state with Count = state.Count - 3 }
 
@@ -54,10 +66,19 @@ let initPage dispatch =
         ]
     ]
 
+let scenarioPage scenario (userName: string) =
+    Html.h1 userName
+
+let lastPage =
+    Html.h1 "Thank you for your time!"
+
 let render (state: State) (dispatch: Msg -> unit) =
-    match state.CurrentScenarioIndex with
-    | Some index -> Html.h1 state.User.Name
-    | None -> initPage dispatch
+    match state.CurrentPage with
+    | Intro -> initPage dispatch
+    | Scenario index ->
+        let scenario = state.Scenarios.[index]
+        scenarioPage scenario state.User.Name
+    | End -> lastPage
 
 Program.mkSimple init update render
 |> Program.withReactSynchronous "elmish-app"
