@@ -61,13 +61,19 @@ let initPage dispatch =
             prop.onTextChange (fun s -> dispatch <| NameChanged s)
         ]
         Html.button [
-          prop.onClick (fun _ -> dispatch Start)
-          prop.text "Start"
+            prop.onClick (fun _ -> dispatch Start)
+            prop.text "Start"
         ]
     ]
 
-let scenarioPage scenario (userName: string) =
-    Html.h1 userName
+let scenarioPage dispatch index scenario (userName: string) =
+    Html.div [
+        Html.h1 userName
+        Html.button [
+            prop.onClick (fun _ -> dispatch <| FinishScenario index)
+            prop.text "Next"
+        ]
+    ]
 
 let lastPage =
     Html.h1 "Thank you for your time!"
@@ -77,7 +83,7 @@ let render (state: State) (dispatch: Msg -> unit) =
     | Intro -> initPage dispatch
     | Scenario index ->
         let scenario = state.Scenarios.[index]
-        scenarioPage scenario state.User.Name
+        scenarioPage dispatch index scenario state.User.Name
     | End -> lastPage
 
 Program.mkSimple init update render
