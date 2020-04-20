@@ -6,10 +6,15 @@ open Model
 open System
 open System
 open System
+open System
+open System
+open System
 open FSharp.Core
 open Fable.Core
 open Fable.Core
 open Fable.React.Props
+open Feliz
+open Feliz
 open Feliz
 open Fetch
 
@@ -48,12 +53,26 @@ let init =
         StartUtc = DateTime.UtcNow
     }
 
+let randomize sqn =
+    let rnd = Random()
+    let rec scramble (sqn : seq<'T>) =
+        let remove n sqn = sqn |> Seq.except [n]
+        seq {
+            let x = sqn |> Seq.item (rnd.Next(0, sqn |> Seq.length))
+            yield x
+            let sqn' = remove x sqn
+            if not (sqn' |> Seq.isEmpty) then
+                yield! scramble sqn'
+        }
+    scramble sqn
+
 let update (msg: Msg) (state: State) =
     match msg with
     | LoadData ->
         (state, Cmd.OfPromise.either loadData () DataLoaded (fun error -> DataLoaded [||]))
     | DataLoaded scenarios ->
-        ({ state with Scenarios = scenarios }, Cmd.none)
+        let randomizedScenarios = scenarios |> Array.map (fun s -> { s with Recommendations = randomize s.Recommendations |> Seq.toArray })
+        ({ state with Scenarios = randomizedScenarios }, Cmd.none)
     | NameChanged name ->
         ({ state with User = { state.User with Name = name } }, Cmd.none)
     | Start ->
@@ -61,7 +80,7 @@ let update (msg: Msg) (state: State) =
             then ({ state with CurrentPage = End }, Cmd.none)
             else ({ state with CurrentPage = (Scenario 0) }, Cmd.none)
     | FinishScenario index ->
-        if Array.length state.Scenarios >= index
+        if (Array.length state.Scenarios) < index
             then ({ state with CurrentPage = End }, Cmd.none)
             else ({ state with CurrentPage = (Scenario <| index + 1) }, Cmd.none)
     | ToggleRecipe recipeId ->
@@ -175,22 +194,36 @@ let showMethod (method: RecommendationMethod) =
     List.contains method.Id allowedMethodIds
 
 let scenarioPage dispatch index scenario selectedRecipeIds =
-    Html.styledDiv "container-fluid" [
-        Html.h3 "Scenario:"
-        Html.paragraph scenario.Description
-        Html.h3 "Your basket contains:"
-        Html.unorderedList (scenario.Input |> Array.map Html.listItem)
+    Html.div [
+        Html.styledDiv "container-fluid" [
+            Html.h3 "Scenario:"
+            Html.paragraph scenario.Description
+            Html.h3 "Your basket contains:"
+            Html.unorderedList (scenario.Input |> Array.map Html.listItem)
 
-        Html.styledDiv "row" [
-            // TODO: randomize order.
-            for method in scenario.Recommendations do
-                if showMethod method then
-                    renderMethod dispatch method selectedRecipeIds
+            Html.styledDiv "row" [
+                for method in scenario.Recommendations do
+                    if showMethod method then
+                        renderMethod dispatch method selectedRecipeIds
+            ]
         ]
-
-        Html.button [
-            prop.onClick (fun _ -> dispatch <| FinishScenario index)
-            prop.text "Next"
+        Html.footer [
+            prop.className "footer bg-light text-center"
+            prop.style [
+                style.position.fixedRelativeToWindow
+                style.bottom 0
+                style.left 0
+                style.right 0
+                style.height 48
+                style.padding 5
+            ]
+            prop.children [
+                Html.button [
+                    prop.onClick (fun _ -> dispatch <| FinishScenario index)
+                    prop.className "btn btn-primary"
+                    prop.text "Next scenario"
+                ]
+            ]
         ]
     ]
 
