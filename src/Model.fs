@@ -24,6 +24,14 @@ type RecommendationMethod = {
     Recommendations: Recipe list
 }
 
+type Input = string list
+
+type RecommendationScenario = {
+    Description: string
+    Input: Input
+    Recommendations: RecommendationMethod list
+}
+
 type User = {
     Name: string
 }
@@ -54,3 +62,7 @@ type InteractionEvent = {
     UserName: string
     Metadata: Metadata
 }
+
+let loadFrom (file: string): RecommendationScenario list =
+    // TODO: Get real data here.
+    []

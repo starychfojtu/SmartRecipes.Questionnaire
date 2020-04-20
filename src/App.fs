@@ -3,16 +3,26 @@ module App
 open Elmish
 open Elmish.React
 open Feliz
+open Model
 
-type State =
-    { Count: int }
+type State = {
+    Count: int
+    User: User
+    Scenarios: RecommendationScenario list
+}
 
 type Msg =
     | Increment
     | Decrement
 
 let init() =
-    { Count = 0 }
+    {
+        Count = 0
+        User = {
+            Name = "anonymous"
+        }
+        Scenarios = loadFrom "data.json"
+    }
 
 let update (msg: Msg) (state: State): State =
     match msg with
