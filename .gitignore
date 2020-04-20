@@ -1,4 +1,5 @@
 public/bundle.js*
+src/.idea
 
 # Node
 node_modules/

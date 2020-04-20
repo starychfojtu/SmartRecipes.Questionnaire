@@ -17,10 +17,10 @@ let init() =
 let update (msg: Msg) (state: State): State =
     match msg with
     | Increment ->
-        { state with Count = state.Count + 1 }
+        { state with Count = state.Count + 2 }
 
     | Decrement ->
-        { state with Count = state.Count - 1 }
+        { state with Count = state.Count - 2 }
 
 let render (state: State) (dispatch: Msg -> unit) =
   Html.div [
