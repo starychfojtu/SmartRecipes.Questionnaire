@@ -105,8 +105,6 @@ let renderRecipe dispatch (recipe: Recipe) isSelected =
             then "card border-success", "card-header text-white bg-success"
             else "card", "card-header"
 
-    let imageUrl = "https://images.media-allrecipes.com/userphotos/560x315/225773.jpg"
-
     Html.div [
         prop.className cardClass
         prop.onClick (fun _ -> dispatch <| ToggleRecipe recipe.Id)
@@ -120,7 +118,7 @@ let renderRecipe dispatch (recipe: Recipe) isSelected =
                 prop.text recipe.Name
             ]
             Html.img [
-                prop.src imageUrl
+                prop.src recipe.ImageUri
                 prop.className "card-img"
                 prop.alt recipe.Name
             ]

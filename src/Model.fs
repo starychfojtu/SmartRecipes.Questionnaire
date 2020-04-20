@@ -12,7 +12,7 @@ type RecipeId = string
 type Recipe = {
     Id: RecipeId
     Uri: string // TODO: Should be System.Uri.
-//    ImageUri: string // TODO: should be System.Uri.
+    ImageUri: string // TODO: should be System.Uri.
     Name: string
     Ingredients: Ingredient array
 }
