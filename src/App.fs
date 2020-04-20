@@ -5,6 +5,7 @@ open Elmish.React
 open Model
 open System
 open System
+open System
 open FSharp.Core
 open Fable.Core
 open Fable.Core
@@ -19,7 +20,7 @@ type Page =
 type State = {
     User: User
     Scenarios: RecommendationScenario array
-    LikedRecipeIds: Set<RecipeId>
+    SelectedRecipeIds: Set<RecipeId>
     CurrentPage: Page
     StartUtc: DateTime
 }
@@ -41,7 +42,7 @@ let init =
             Name = "anonymous"
         }
         Scenarios = [||]
-        LikedRecipeIds = Set.empty
+        SelectedRecipeIds = Set.empty
         CurrentPage = Intro
         StartUtc = DateTime.UtcNow
     }
@@ -65,8 +66,15 @@ let update (msg: Msg) (state: State) =
     | ToggleRecipe _ ->
         (state, Cmd.none)
 
+module Html =
+    let styledDiv (className: string) (children: ReactElement seq) =
+        Html.div [
+            prop.className className
+            prop.children children
+        ]
+
 let initPage dispatch =
-    Html.div [
+    Html.styledDiv "container" [
         Html.h1 "Recommendation questionnaire"
         Html.input [
             prop.type'.text
@@ -81,32 +89,53 @@ let initPage dispatch =
 let renderIngredient ingredient =
     Html.listItem ingredient.DisplayLine
 
-let renderRecipe (recipe: Recipe) =
-    Html.div [
-        Html.anchor [
-            prop.href recipe.Uri
-            prop.children [
-                Html.h4 recipe.Name
-            ]
+let renderRecipe (recipe: Recipe) isSelected =
+    let (cardClass, headerClass) =
+        if isSelected
+            then "card border-success", "card-header border-success text-success"
+            else "card", "card-header"
+
+    Html.styledDiv cardClass [
+        Html.div [
+            prop.className headerClass
+            prop.text recipe.Name
         ]
-        Html.unorderedList (recipe.Ingredients |> Array.map renderIngredient)
+        Html.styledDiv "card-body" [
+            Html.unorderedList (recipe.Ingredients |> Array.sortByDescending (fun i -> i.IsInputMatch) |> Array.map renderIngredient)
+        ]
     ]
 
-let renderMethod (method: RecommendationMethod) =
-    Html.div [
+let renderMethod (method: RecommendationMethod) selectedRecipeIds =
+    Html.styledDiv "col-2" [
         Html.h3 method.Name
         for recipe in method.Recommendations do
-            renderRecipe recipe
+            renderRecipe recipe (Set.contains recipe.Id selectedRecipeIds)
     ]
 
-let scenarioPage dispatch index scenario =
-    Html.div [
+let allowedMethodIds = [
+    "f2v-256-10-tf-idf-cal";
+    "f2v-256-10-tf-idf-mmr";
+    "tf-idf-cal";
+    "tf-idf-mmr";
+    "tf-idf";
+    "f2v-256-10";
+]
+
+let showMethod (method: RecommendationMethod) =
+    List.contains method.Id allowedMethodIds
+
+let scenarioPage dispatch index scenario selectedRecipeIds =
+    Html.styledDiv "container-fluid" [
+        Html.h3 "Scenario:"
         Html.paragraph scenario.Description
         Html.h3 "Your basket contains:"
         Html.unorderedList (scenario.Input |> Array.map Html.listItem)
 
-        for method in scenario.Recommendations do
-            renderMethod method
+        Html.styledDiv "row" [
+            for method in scenario.Recommendations do
+                if showMethod method then
+                    renderMethod method selectedRecipeIds
+        ]
 
         Html.button [
             prop.onClick (fun _ -> dispatch <| FinishScenario index)
@@ -122,7 +151,7 @@ let render (state: State) (dispatch: Msg -> unit) =
     | Intro -> initPage dispatch
     | Scenario index ->
         let scenario = state.Scenarios.[index]
-        scenarioPage dispatch index scenario
+        scenarioPage dispatch index scenario state.SelectedRecipeIds
     | End -> lastPage
 
 Program.mkProgram (fun _ -> (init, Cmd.ofMsg LoadData)) update render
