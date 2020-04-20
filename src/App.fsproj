@@ -4,6 +4,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Model.fs" />
+    <Compile Include="Interactions.fs" />
     <Compile Include="App.fs" />
   </ItemGroup>
   <ItemGroup>
