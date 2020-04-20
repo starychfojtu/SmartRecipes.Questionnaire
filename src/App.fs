@@ -1,20 +1,11 @@
 module App
 
+open Browser
 open Elmish
 open Elmish.React
 open Model
 open System
-open System
-open System
-open System
-open System
-open System
 open FSharp.Core
-open Fable.Core
-open Fable.Core
-open Fable.React.Props
-open Feliz
-open Feliz
 open Feliz
 open Fetch
 
@@ -45,6 +36,7 @@ let loadData () =
 let init =
     {
         User = {
+            SessionId = Guid.NewGuid()
             Name = "anonymous"
         }
         Scenarios = [||]
@@ -80,7 +72,8 @@ let update (msg: Msg) (state: State) =
             then ({ state with CurrentPage = End }, Cmd.none)
             else ({ state with CurrentPage = (Scenario 0) }, Cmd.none)
     | FinishScenario index ->
-        if (Array.length state.Scenarios) < index
+        Dom.window.scrollTo (0.0, 0.0)
+        if (Array.length state.Scenarios) <= index + 1
             then ({ state with CurrentPage = End }, Cmd.none)
             else ({ state with CurrentPage = (Scenario <| index + 1) }, Cmd.none)
     | ToggleRecipe recipeId ->
@@ -99,15 +92,35 @@ module Html =
         ]
 
 let initPage dispatch =
-    Html.styledDiv "container" [
-        Html.h1 "Recommendation questionnaire"
-        Html.input [
-            prop.type'.text
-            prop.onTextChange (fun s -> dispatch <| NameChanged s)
+    Html.div [
+        prop.className "container"
+        prop.style [
+            style.paddingTop (length.perc 10)
         ]
-        Html.button [
-            prop.onClick (fun _ -> dispatch Start)
-            prop.text "Start"
+        prop.children [
+            Html.styledDiv "row" [
+                Html.h1 "SmartRecipes Survey"
+                Html.p "Thanks for filling out the form ! It consists of few scenarios, where each is described at the top alongside with ingredient list in your shopping basket. Please evaluate both recipes by clicking on them and whole methods. Thanks ! :)"
+            ]
+            Html.styledDiv "row" [
+                Html.label [
+                    prop.text "Your name:"
+                    prop.style [
+                        style.marginRight 15
+                    ]
+                ]
+                Html.input [
+                    prop.type'.text
+                    prop.onTextChange (fun s -> dispatch <| NameChanged s)
+                ]
+            ]
+            Html.styledDiv "row" [
+                Html.button [
+                    prop.onClick (fun _ -> dispatch Start)
+                    prop.className "btn btn-primary"
+                    prop.text "Start"
+                ]
+            ]
         ]
     ]
 

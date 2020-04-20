@@ -34,6 +34,7 @@ type RecommendationScenario = {
 }
 
 type User = {
+    SessionId: Guid
     Name: string
 }
 
