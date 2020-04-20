@@ -5,6 +5,7 @@ open Elmish
 open Elmish.React
 open Model
 open System
+open System
 open FSharp.Core
 open Feliz
 open Fetch
@@ -204,6 +205,38 @@ let renderMethod dispatch (method: RecommendationMethod) selectedRecipeIds =
             renderRecipe dispatch recipe (Set.contains recipe.Id selectedRecipeIds)
     ]
 
+let renderMethodRating dispatch methodIndex (method: RecommendationMethod) (currentOpinion: MethodOpinion option) =
+    let nameClassName =
+        match currentOpinion with
+        | Some Good -> "text-success"
+        | Some Bad -> "text-danger"
+        | _ -> ""
+
+    Html.styledDiv "col-2" [
+        Html.h3 [
+            prop.className nameClassName
+            prop.text (Map.find method.Id methodAliases)
+        ]
+        Html.button [
+            prop.className "btn btn-success"
+            prop.disabled (match currentOpinion with Some Good -> true | _ -> false)
+            prop.onClick (fun _ -> dispatch (RateMethod (methodIndex, Good)))
+            prop.style [
+                style.margin 4
+            ]
+            prop.text "Good :)"
+        ]
+        Html.button [
+            prop.className "btn btn-danger"
+            prop.disabled (match currentOpinion with Some Bad -> true | _ -> false)
+            prop.onClick (fun _ -> dispatch (RateMethod (methodIndex, Bad)))
+            prop.style [
+                style.margin 4
+            ]
+            prop.text "Bad :("
+        ]
+    ]
+
 let allowedMethodIds = [
     "f2v-256-10-tf-idf-cal";
     "f2v-256-10-tf-idf-mmr";
@@ -216,7 +249,8 @@ let allowedMethodIds = [
 let showMethod (method: RecommendationMethod) =
     List.contains method.Id allowedMethodIds
 
-let scenarioPage dispatch index scenario selectedRecipeIds =
+let scenarioPage dispatch index scenario selectedRecipeIds methodRatings =
+    let methods = scenario.Recommendations |> Array.filter showMethod
     Html.div [
         Html.styledDiv "container-fluid" [
             Html.h3 "Scenario:"
@@ -225,9 +259,8 @@ let scenarioPage dispatch index scenario selectedRecipeIds =
             Html.unorderedList (scenario.Input |> Array.map Html.listItem)
 
             Html.styledDiv "row" [
-                for method in scenario.Recommendations do
-                    if showMethod method then
-                        renderMethod dispatch method selectedRecipeIds
+                for method in methods do
+                    renderMethod dispatch method selectedRecipeIds
             ]
         ]
         Html.footer [
@@ -237,10 +270,17 @@ let scenarioPage dispatch index scenario selectedRecipeIds =
                 style.bottom 0
                 style.left 0
                 style.right 0
-                style.height 48
                 style.padding 5
             ]
             prop.children [
+                Html.styledDiv "row" [
+                    for method in methods do
+                        let methodIndex = {
+                            ScenarionIndex = index
+                            MethodId = method.Id
+                        }
+                        renderMethodRating dispatch methodIndex method (Map.tryFind methodIndex methodRatings)
+                ]
                 Html.button [
                     prop.onClick (fun _ -> dispatch <| FinishScenario index)
                     prop.className "btn btn-primary"
@@ -258,7 +298,7 @@ let render (state: State) (dispatch: Msg -> unit) =
     | Intro -> initPage dispatch
     | Scenario index ->
         let scenario = state.Scenarios.[index]
-        scenarioPage dispatch index scenario state.SelectedRecipeIds
+        scenarioPage dispatch index scenario state.SelectedRecipeIds state.MethodRatings
     | End -> lastPage
 
 Program.mkProgram (fun _ -> (init, Cmd.ofMsg LoadData)) update render

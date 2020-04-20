@@ -39,7 +39,6 @@ type User = {
 }
 
 type MethodOpinion =
-    | None
     | Bad
     | Good
 
