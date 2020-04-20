@@ -1,0 +1,5344 @@
+[
+  {
+    "Description": "Case 1: Searching with common ingredients with amounts specified (no specific edge-case).",
+    "Input": [
+      "beef (1 pound)",
+      "bell peppers (4 pieces)",
+      "mushrooms (5 pieces)"
+    ],
+    "Recommendations": [
+      {
+        "Id": "f2v-256-10-tf-idf-cal",
+        "Name": "Food2Vec 256/10 (TF-IDF weighted mean, Calibration)",
+        "Recommendations": [
+          {
+            "Id": "41131591-aaba-43aa-8c9d-635f749103c9",
+            "Uri": "https://www.allrecipes.com/recipe/140653/amandas-stuffed-peppers/",
+            "Name": "Amanda's Stuffed Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/2 cup bread crumbs",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon Italian seasoning",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 egg, lightly beaten",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "3/4 cup shredded mozzarella cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 small onion, finely chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 white mushrooms, chopped",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "3/4 cup grated Parmesan cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 cloves garlic, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 bell peppers, tops cut off and seeded",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 (26 ounce) can spaghetti sauce",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "c6943988-0f41-4251-9761-b13e1391d7f0",
+            "Uri": "https://www.allrecipes.com/recipe/180596/stuffed-jack-o-lantern-bell-peppers/",
+            "Name": "Stuffed Jack-O-Lantern Bell Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/4 teaspoon pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 bell peppers, any color",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "4 slices whole wheat bread, cubed",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 small onion, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 egg",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup chili sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup prepared yellow mustard",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 tablespoons Worcestershire sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cloves garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 small tomato, diced",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "c43f6ebc-4d7d-4ecd-b688-f59425fd1fc8",
+            "Uri": "https://www.allrecipes.com/recipe/77194/bolognese-stuffed-bell-peppers/",
+            "Name": "Bolognese Stuffed Bell Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "6 bell peppers (any color) stems and seeds removed, cut in half lengthwise",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 tablespoons olive oil, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 1/2 cups prepared marinara sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup cooked rice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 pound pancetta or lightly smoked bacon, diced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup red wine",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon red pepper flakes",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/8 cup celery",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1/3 cup heavy cream",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/8 cup minced carrots",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup grated Parmesan cheese, divided",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "87f67496-dc60-4b0b-9c99-5c4992d699c2",
+            "Uri": "https://www.allrecipes.com/recipe/232019/cheddar-broccoli-and-chicken-casserole-from-country-crock/",
+            "Name": "Cheddar Broccoli and Chicken Casserole from Country Crock&#174;",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 1/2 cups 2% milk",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup all-purpose flour",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cups cut-up cooked chicken breast",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 cups vegetables such as broccoli florets and red bell peppers",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 1/4 cups finely shredded low-fat Cheddar cheese, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon onion powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 tablespoons Country Crock&#174; Spread, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup panko bread crumbs",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "c17f2f07-d626-483d-ae81-2161bb94b51d",
+            "Uri": "https://www.allrecipes.com/recipe/56412/mama-corleones-sausage-and-peppers/",
+            "Name": "Mama Corleone's Sausage and Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/4 cup extra virgin olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "5 assorted bell peppers, seeded and cut into strips",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "salt and pepper to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup minced flat leaf parsley",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon dried basil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon dried oregano",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "freshly grated Parmesan cheese to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 (4 ounce) links sweet Italian sausage",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 clove garlic, minced",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "c16012bf-5f27-468e-a344-69e916e0dddc",
+            "Uri": "https://www.allrecipes.com/recipe/255038/sheet-pan-chicken-fajitas/",
+            "Name": "Sheet Pan Chicken Fajitas",
+            "Ingredients": [
+              {
+                "DisplayLine": "⅓ cup vegetable oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 teaspoon dried oregano",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 teaspoons chili powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon garlic powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon ground cumin",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon onion powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pinch ground cayenne pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 cups sliced bell peppers, any color",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "¼ teaspoon ground black pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 onion, sliced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "¼ cup chopped fresh cilantro",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 ½ pounds chicken tenders, quartered",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ lime, juiced",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "cc8effd3-22e6-49a5-a883-d21e860ccf84",
+            "Uri": "https://www.allrecipes.com/recipe/11845/chicken-and-artichoke-penne-with-a-white-sauce/",
+            "Name": "Chicken And Artichoke Penne With A White Sauce",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 (8 ounce) can artichoke hearts in water, drained",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pinch paprika",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "8 fresh mushrooms, sliced",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 skinless, boneless chicken breast halves - cut into 1 inch cubes",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cups homemade bechamel sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "10 ounces penne pasta",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "¾ (6 ounce) can black olives, drained and chopped",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "b960a60a-e0a6-40d1-a08d-cbe78e97c2ba",
+            "Uri": "https://www.allrecipes.com/recipe/256219/stuffed-peppers-from-green-giant/",
+            "Name": "Stuffed Peppers from Green Giant&#174;",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/2 teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound ground turkey or chicken",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 1/2 cups shredded mozzarella cheese, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 small onion, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cloves garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (15 ounce) can tomato sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon Italian seasoning",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons grated Parmesan cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 medium red or green bell peppers, halved lengthwise and seeded",
+                "IsInputMatch": true
+              }
+            ]
+          },
+          {
+            "Id": "35fe4a16-2aa5-443e-b5df-73fab5ee7628",
+            "Uri": "https://www.allrecipes.com/recipe/236359/beef-and-rice-stuffed-bell-peppers/",
+            "Name": "Beef and Rice Stuffed Bell Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 tablespoon chopped fresh flat-leaf parsley, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 onion, very thinly sliced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 teaspoon red pepper flakes",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup chopped fresh flat-leaf parsley",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 1/2 pounds lean ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 1/2 cups cooked rice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup freshly shredded Parmigiano-Reggiano cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 bell peppers",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 cup beef broth",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 cloves garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 teaspoons salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon freshly ground black pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 1/2 cups chunky tomato sauce",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "cca8b5dd-d42e-4efd-aa41-83c1536961a9",
+            "Uri": "https://www.allrecipes.com/recipe/77520/pizza-with-pepper-onion-and-feta/",
+            "Name": "Pizza with Pepper, Onion and Feta",
+            "Ingredients": [
+              {
+                "DisplayLine": "3 cups chopped bell peppers (red, green, yellow)",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "Salt, to taste (optional)",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 1/2 teaspoons dried Italian herbs",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons extra-virgin olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3/4 cup crumbled herbed feta cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 cloves garlic, crushed",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup sliced red or yellow onion, pulled into rings",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "Crushed red pepper flakes, to taste (optional)",
+                "IsInputMatch": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Id": "tf-idf-cal",
+        "Name": "TF-IDF with structured data (Calibration)",
+        "Recommendations": [
+          {
+            "Id": "41131591-aaba-43aa-8c9d-635f749103c9",
+            "Uri": "https://www.allrecipes.com/recipe/140653/amandas-stuffed-peppers/",
+            "Name": "Amanda's Stuffed Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/2 cup bread crumbs",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon Italian seasoning",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 egg, lightly beaten",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "3/4 cup shredded mozzarella cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 small onion, finely chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 white mushrooms, chopped",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "3/4 cup grated Parmesan cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 cloves garlic, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 bell peppers, tops cut off and seeded",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 (26 ounce) can spaghetti sauce",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "c6943988-0f41-4251-9761-b13e1391d7f0",
+            "Uri": "https://www.allrecipes.com/recipe/180596/stuffed-jack-o-lantern-bell-peppers/",
+            "Name": "Stuffed Jack-O-Lantern Bell Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/4 teaspoon pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 bell peppers, any color",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "4 slices whole wheat bread, cubed",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 small onion, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 egg",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup chili sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup prepared yellow mustard",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 tablespoons Worcestershire sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cloves garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 small tomato, diced",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "c43f6ebc-4d7d-4ecd-b688-f59425fd1fc8",
+            "Uri": "https://www.allrecipes.com/recipe/77194/bolognese-stuffed-bell-peppers/",
+            "Name": "Bolognese Stuffed Bell Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "6 bell peppers (any color) stems and seeds removed, cut in half lengthwise",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 tablespoons olive oil, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 1/2 cups prepared marinara sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup cooked rice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 pound pancetta or lightly smoked bacon, diced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup red wine",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon red pepper flakes",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/8 cup celery",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1/3 cup heavy cream",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/8 cup minced carrots",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup grated Parmesan cheese, divided",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "67374046-d1be-4dcd-b24f-56f0e3afe678",
+            "Uri": "https://www.allrecipes.com/recipe/237109/slow-cooker-spinach-and-crab-lasagna/",
+            "Name": "Slow Cooker Spinach and Crab Lasagna ",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 (12 ounce) container cottage cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (8 ounce) package imitation crabmeat",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "12 ounces ricotta cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 1/2 cups shredded mozzarella cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (16 ounce) jar Alfredo sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "15 fresh mushrooms, sliced",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 bunch fresh spinach, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (16 ounce) package dried lasagna noodles",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "35fe4a16-2aa5-443e-b5df-73fab5ee7628",
+            "Uri": "https://www.allrecipes.com/recipe/236359/beef-and-rice-stuffed-bell-peppers/",
+            "Name": "Beef and Rice Stuffed Bell Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 tablespoon chopped fresh flat-leaf parsley, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 onion, very thinly sliced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 teaspoon red pepper flakes",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup chopped fresh flat-leaf parsley",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 1/2 pounds lean ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 1/2 cups cooked rice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup freshly shredded Parmigiano-Reggiano cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 bell peppers",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 cup beef broth",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 cloves garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 teaspoons salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon freshly ground black pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 1/2 cups chunky tomato sauce",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "c17f2f07-d626-483d-ae81-2161bb94b51d",
+            "Uri": "https://www.allrecipes.com/recipe/56412/mama-corleones-sausage-and-peppers/",
+            "Name": "Mama Corleone's Sausage and Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/4 cup extra virgin olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "5 assorted bell peppers, seeded and cut into strips",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "salt and pepper to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup minced flat leaf parsley",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon dried basil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon dried oregano",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "freshly grated Parmesan cheese to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 (4 ounce) links sweet Italian sausage",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 clove garlic, minced",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "c16012bf-5f27-468e-a344-69e916e0dddc",
+            "Uri": "https://www.allrecipes.com/recipe/255038/sheet-pan-chicken-fajitas/",
+            "Name": "Sheet Pan Chicken Fajitas",
+            "Ingredients": [
+              {
+                "DisplayLine": "⅓ cup vegetable oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 teaspoon dried oregano",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 teaspoons chili powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon garlic powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon ground cumin",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon onion powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pinch ground cayenne pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 cups sliced bell peppers, any color",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "¼ teaspoon ground black pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 onion, sliced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "¼ cup chopped fresh cilantro",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 ½ pounds chicken tenders, quartered",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ lime, juiced",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "4e6a45c8-045a-4bf1-a47b-f1f7d789bb21",
+            "Uri": "https://www.allrecipes.com/recipe/82461/valentine-meatballs/",
+            "Name": "Valentine Meatballs",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 cup chopped fresh mushrooms",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 cup shredded Swiss cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 pounds lean ground beef",
+                "IsInputMatch": true
+              }
+            ]
+          },
+          {
+            "Id": "87f67496-dc60-4b0b-9c99-5c4992d699c2",
+            "Uri": "https://www.allrecipes.com/recipe/232019/cheddar-broccoli-and-chicken-casserole-from-country-crock/",
+            "Name": "Cheddar Broccoli and Chicken Casserole from Country Crock&#174;",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 1/2 cups 2% milk",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup all-purpose flour",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cups cut-up cooked chicken breast",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 cups vegetables such as broccoli florets and red bell peppers",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 1/4 cups finely shredded low-fat Cheddar cheese, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon onion powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 tablespoons Country Crock&#174; Spread, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup panko bread crumbs",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "2c9a2729-fd04-4ef3-97b6-aa58c9861c1e",
+            "Uri": "https://www.allrecipes.com/recipe/245924/smoked-sausage-and-orzo-stuffed-peppers/",
+            "Name": "Smoked Sausage and Orzo Stuffed Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 tablespoon olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 clove garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon white wine vinegar",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon Italian seasoning",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup shredded mozzarella cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 medium onion, 1/2-inch dice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cups orzo pasta, cooked according to package directions",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 teaspoon ground cinnamon",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 3/4 cups marinara sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 bell peppers",
+                "IsInputMatch": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Id": "f2v-256-10-tf-idf-mmr",
+        "Name": "Food2Vec 256/10 (TF-IDF weighted mean, MMR)",
+        "Recommendations": [
+          {
+            "Id": "41131591-aaba-43aa-8c9d-635f749103c9",
+            "Uri": "https://www.allrecipes.com/recipe/140653/amandas-stuffed-peppers/",
+            "Name": "Amanda's Stuffed Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/2 cup bread crumbs",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon Italian seasoning",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 egg, lightly beaten",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "3/4 cup shredded mozzarella cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 small onion, finely chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 white mushrooms, chopped",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "3/4 cup grated Parmesan cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 cloves garlic, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 bell peppers, tops cut off and seeded",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 (26 ounce) can spaghetti sauce",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "36f301e3-80f9-4dc1-972e-639a3e7476d8",
+            "Uri": "https://www.allrecipes.com/recipe/258049/chicken-vegetable-stir-fry/",
+            "Name": "Chicken Vegetable Stir Fry",
+            "Ingredients": [
+              {
+                "DisplayLine": "2 tablespoons sesame seeds",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup snow peas, cut in 3/4-inch pieces",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound boneless, skinless chicken breasts, cut in 3/4-inch pieces",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 ¼ cups chopped red onion",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cups bean sprouts",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons vegetable oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 large red or yellow bell peppers, chopped",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 tablespoons water",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons light soy sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons fish sauce",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "c16012bf-5f27-468e-a344-69e916e0dddc",
+            "Uri": "https://www.allrecipes.com/recipe/255038/sheet-pan-chicken-fajitas/",
+            "Name": "Sheet Pan Chicken Fajitas",
+            "Ingredients": [
+              {
+                "DisplayLine": "⅓ cup vegetable oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 teaspoon dried oregano",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 teaspoons chili powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon garlic powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon ground cumin",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon onion powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pinch ground cayenne pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 cups sliced bell peppers, any color",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "¼ teaspoon ground black pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 onion, sliced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "¼ cup chopped fresh cilantro",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 ½ pounds chicken tenders, quartered",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ lime, juiced",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "9d080389-80ce-43ff-9902-39cfe4549c3d",
+            "Uri": "https://www.allrecipes.com/recipe/172138/louisiana-crawfish-ya-ya-pasta/",
+            "Name": "Louisiana Crawfish Ya-Ya Pasta",
+            "Ingredients": [
+              {
+                "DisplayLine": "2 tablespoons chopped fresh parsley",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3/4 cup shredded Cheddar cheese, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/3 cup sliced fresh mushrooms (optional)",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1/3 cup sliced green onions",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3/4 (12 ounce) package egg noodles",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup chopped onion",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup butter",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup minced green bell pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 clove garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons Cajun seasoning blend (such as Tony Chachere's&#174;), or to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup heavy cream",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "ae06fe24-7527-42b7-98e2-29ad6a0d7c47",
+            "Uri": "https://www.allrecipes.com/recipe/234911/chorizo-stuffed-peppers-with-green-chile-ranchero-sauce/",
+            "Name": "Chorizo-Stuffed Peppers with Green Chile Ranchero Sauce",
+            "Ingredients": [
+              {
+                "DisplayLine": "3 cups cooked brown rice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound chorizo sausage",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 small onion, finely chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "Green Chile Ranchero Sauce:",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "5 slices bacon, finely chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 roasted Anaheim chile peppers, peeled and chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup shredded Monterey Jack cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 bell peppers, tops and seeds removed",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1/4 cup salsa",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon ranch dressing mix",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (14.5 ounce) can petite diced tomatoes",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (14.5 ounce) can green chile enchilada sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/3 (16 ounce) container sour cream",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "0853d96a-1396-4166-a0a9-d5acbd022dcd",
+            "Uri": "https://www.allrecipes.com/recipe/152364/venison-steak-with-peppers-and-onions/",
+            "Name": "Venison Steak with Peppers and Onions",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 teaspoons soy sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 1/2 tablespoons beef broth",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 teaspoon ground white pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 1/2 tablespoons dry sherry",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound lean venison, cut into thin strips",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 teaspoons steak seasoning",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 teaspoon sugar-based curing mixture (such as Morton&#174; Tender Quick&#174;)",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon cornstarch",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons vegetable oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 onion, halved and sliced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 bell peppers, sliced into thin strips",
+                "IsInputMatch": true
+              }
+            ]
+          },
+          {
+            "Id": "68b9410e-7196-4691-82ea-e4d508f3b56b",
+            "Uri": "https://www.allrecipes.com/recipe/94949/vegetarian-shepherds-pie/",
+            "Name": "Vegetarian Shepherd's Pie",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 cup frozen or fresh peas",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup fat-free half and half (or milk)",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup grated Parmesan cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons extra virgin olive oil, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons curry powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 large yellow onion, roughly chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 cloves garlic, crushed",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 small red or green bell peppers, chopped",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "3 cups cubed eggplant, with peel",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 teaspoons ground cumin",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (15 ounce) can diced tomatoes",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 1/4 pounds small red potatoes, halved",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pinch Salt and freshly ground black pepper to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup water",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "2e176979-5c94-44ec-bba3-2e97a16c3507",
+            "Uri": "https://www.allrecipes.com/recipe/236683/protein-packed-spicy-vegan-quinoa-with-edamame/",
+            "Name": "Protein-Packed Spicy Vegan Quinoa with Edamame",
+            "Ingredients": [
+              {
+                "DisplayLine": "3 1/2 cups water",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cups quinoa, rinsed",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 1/2 cups frozen shelled edamame (green soybeans)",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 teaspoons vegetable bouillon (such as Better Than Bouillon&#174;)",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 sweet onions, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons minced fresh ginger",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 cloves garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 bell peppers, chopped",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 tablespoons chopped fresh cilantro",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup reduced-sodium soy sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon hot chile paste (such as sambal oelek), or to taste (optional)",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "87f67496-dc60-4b0b-9c99-5c4992d699c2",
+            "Uri": "https://www.allrecipes.com/recipe/232019/cheddar-broccoli-and-chicken-casserole-from-country-crock/",
+            "Name": "Cheddar Broccoli and Chicken Casserole from Country Crock&#174;",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 1/2 cups 2% milk",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup all-purpose flour",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cups cut-up cooked chicken breast",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 cups vegetables such as broccoli florets and red bell peppers",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 1/4 cups finely shredded low-fat Cheddar cheese, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon onion powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 tablespoons Country Crock&#174; Spread, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup panko bread crumbs",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "35fe4a16-2aa5-443e-b5df-73fab5ee7628",
+            "Uri": "https://www.allrecipes.com/recipe/236359/beef-and-rice-stuffed-bell-peppers/",
+            "Name": "Beef and Rice Stuffed Bell Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 tablespoon chopped fresh flat-leaf parsley, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 onion, very thinly sliced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 teaspoon red pepper flakes",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup chopped fresh flat-leaf parsley",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 1/2 pounds lean ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 1/2 cups cooked rice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup freshly shredded Parmigiano-Reggiano cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 bell peppers",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 cup beef broth",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 cloves garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 teaspoons salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon freshly ground black pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 1/2 cups chunky tomato sauce",
+                "IsInputMatch": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Id": "tf-idf-mmr",
+        "Name": "TF-IDF with structured data (MMR)",
+        "Recommendations": [
+          {
+            "Id": "41131591-aaba-43aa-8c9d-635f749103c9",
+            "Uri": "https://www.allrecipes.com/recipe/140653/amandas-stuffed-peppers/",
+            "Name": "Amanda's Stuffed Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/2 cup bread crumbs",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon Italian seasoning",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 egg, lightly beaten",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "3/4 cup shredded mozzarella cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 small onion, finely chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 white mushrooms, chopped",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "3/4 cup grated Parmesan cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 cloves garlic, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 bell peppers, tops cut off and seeded",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 (26 ounce) can spaghetti sauce",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "35fe4a16-2aa5-443e-b5df-73fab5ee7628",
+            "Uri": "https://www.allrecipes.com/recipe/236359/beef-and-rice-stuffed-bell-peppers/",
+            "Name": "Beef and Rice Stuffed Bell Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 tablespoon chopped fresh flat-leaf parsley, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 onion, very thinly sliced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 teaspoon red pepper flakes",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup chopped fresh flat-leaf parsley",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 1/2 pounds lean ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 1/2 cups cooked rice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup freshly shredded Parmigiano-Reggiano cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 bell peppers",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 cup beef broth",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 cloves garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 teaspoons salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon freshly ground black pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 1/2 cups chunky tomato sauce",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "f4938053-ca29-41d0-aa19-c65b7c581add",
+            "Uri": "https://www.allrecipes.com/recipe/218485/greek-island-chicken-shish-kebabs/",
+            "Name": "Greek Island Chicken Shish Kebabs",
+            "Ingredients": [
+              {
+                "DisplayLine": "½ teaspoon dried thyme",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 large onion, quartered and separated into pieces",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "¼ cup lemon juice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 teaspoon dried oregano",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "¼ cup white vinegar",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 teaspoon ground cumin",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "¼ cup olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cloves garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 pounds skinless, boneless chicken breast, cut into 1 1/2-inch pieces",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "12 fresh mushrooms",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "¼ teaspoon ground black pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "¼ teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "12 cherry tomatoes",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 wooden skewers",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 large green or red bell peppers, cut into 1-inch pieces",
+                "IsInputMatch": true
+              }
+            ]
+          },
+          {
+            "Id": "75cfeb07-0935-4b6c-8d41-e5d569b77a03",
+            "Uri": "https://www.allrecipes.com/recipe/276832/keto-turkey-stuffed-peppers/",
+            "Name": "Keto Turkey-Stuffed Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "2 large bell peppers, any color - cut in half lengthwise, cored, and seeded",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "4 (1 inch) cubes Colby-Jack cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cups frozen cauliflower rice (such as Green Giant&#174;)",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 teaspoons sambal oelek chili paste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup water",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "8 slices pickled jalapeno peppers (optional)",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cloves garlic, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (14.5 ounce) can diced tomatoes, undrained",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup diced onion",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (8 ounce) can tomato sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "aluminum foil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound ground turkey",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon freshly ground black pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 tablespoons diced fresh jalapeno pepper, or to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 teaspoons reduced-fat sour cream",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "nonfat cooking spray",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "1efbea51-5ca9-4b9f-a6c1-bcc56b3c7be8",
+            "Uri": "https://www.allrecipes.com/recipe/40573/blackened-shrimp-stroganoff/",
+            "Name": "Blackened Shrimp Stroganoff",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 tablespoon olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound fresh shrimp, peeled and deveined",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon Cajun seasoning",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 ounces fettuccini pasta",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 cups fresh mushrooms, sliced",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 tablespoon butter",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2/3 cup chicken broth",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon drained capers",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon chopped shallots",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup chicken broth",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon cornstarch",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup sour cream",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (7 ounce) jar roasted red bell peppers",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "7b492b0f-5947-4fdf-b81d-96bb3ffdde8a",
+            "Uri": "https://www.allrecipes.com/recipe/238603/italian-style-sausage-and-peppers/",
+            "Name": "Italian-Style Sausage and Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "3 bell peppers (green, yellow and/or red), sliced",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 pound sweet Italian sausage links",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 clove garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons vegetable oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 large yellow onion, sliced into rings",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 teaspoon freshly ground black pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 fresh Italian sandwich rolls (optional)",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "9ce31ff9-99ff-4dfa-9bf8-b683758602e8",
+            "Uri": "https://www.allrecipes.com/recipe/12018/layered-egg-noodle-bake/",
+            "Name": "Layered Egg Noodle Bake",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/2 cup chopped green bell pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound lean ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 cups fresh sliced mushrooms",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 tablespoons olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 onion, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cloves garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (6 ounce) can tomato paste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (28 ounce) can crushed tomatoes",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (12 ounce) package egg noodles",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 teaspoon chopped fresh parsley",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 teaspoon cayenne pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon dried oregano",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 teaspoons Italian seasoning",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (8 ounce) container sour cream",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 teaspoon white sugar",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "ground black pepper to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (8 ounce) package cream cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pinch paprika",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup grated Parmesan cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup chopped green onions",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "91e83655-03c4-43d5-bef0-8f1d1b5480d8",
+            "Uri": "https://www.allrecipes.com/recipe/214101/easy-teriyaki-kabobs/",
+            "Name": "Easy Teriyaki Kabobs",
+            "Ingredients": [
+              {
+                "DisplayLine": "2 tablespoons vegetable oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup Kikkoman Teriyaki Marinade and Sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pint cherry tomatoes",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 red or green bell peppers, cut into 1 1/2-inch pieces",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 pounds pork tenderloin, trimmed, cut into 1-inch cubes*",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "29876f23-f293-48d4-ba5a-cd5f93b7cba2",
+            "Uri": "https://www.allrecipes.com/recipe/111814/hash-brown-hot-dish-stuffed-bell-peppers/",
+            "Name": "Hash Brown Hot Dish Stuffed Bell Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "salt and pepper to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 fresh jalapeno pepper, diced (optional)",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup shredded Cheddar cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pinch cumin",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 bell peppers, tops cut off, seeded",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1/2 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "4 frozen hash brown patties",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (15 ounce) can green beans, drained",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "2e176979-5c94-44ec-bba3-2e97a16c3507",
+            "Uri": "https://www.allrecipes.com/recipe/236683/protein-packed-spicy-vegan-quinoa-with-edamame/",
+            "Name": "Protein-Packed Spicy Vegan Quinoa with Edamame",
+            "Ingredients": [
+              {
+                "DisplayLine": "3 1/2 cups water",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cups quinoa, rinsed",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 1/2 cups frozen shelled edamame (green soybeans)",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 teaspoons vegetable bouillon (such as Better Than Bouillon&#174;)",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 sweet onions, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons minced fresh ginger",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 cloves garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 bell peppers, chopped",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 tablespoons chopped fresh cilantro",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup reduced-sodium soy sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon hot chile paste (such as sambal oelek), or to taste (optional)",
+                "IsInputMatch": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Id": "jaccard",
+        "Name": "Jaccard",
+        "Recommendations": [
+          {
+            "Id": "4e6a45c8-045a-4bf1-a47b-f1f7d789bb21",
+            "Uri": "https://www.allrecipes.com/recipe/82461/valentine-meatballs/",
+            "Name": "Valentine Meatballs",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 cup chopped fresh mushrooms",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 cup shredded Swiss cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 pounds lean ground beef",
+                "IsInputMatch": true
+              }
+            ]
+          },
+          {
+            "Id": "1d930c05-df72-4e24-a8b0-b896d53f6939",
+            "Uri": "https://www.allrecipes.com/recipe/23260/simple-hamburger-stroganoff/",
+            "Name": "Simple Hamburger Stroganoff",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 (8 ounce) container sour cream",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (6 ounce) can chopped mushrooms, with liquid",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 (16 ounce) package egg noodles",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup milk",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound lean ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 (8 ounce) package cream cheese",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "112f4dea-f856-4eb1-8ee4-09427592593a",
+            "Uri": "https://www.allrecipes.com/recipe/11969/pasta-bake/",
+            "Name": "Pasta Bake",
+            "Ingredients": [
+              {
+                "DisplayLine": "2 cups shredded mozzarella cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound lean ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "8 ounces mostaccioli pasta",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (4 ounce) can mushrooms, drained",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 (28 ounce) jar spaghetti sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 onion, chopped",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "580e0c9b-cbb2-42e2-8edd-227dce2ec4a2",
+            "Uri": "https://www.allrecipes.com/recipe/18158/easy-pasta-casserole/",
+            "Name": "Easy Pasta Casserole",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 1/4 cups Italian-style stewed tomatoes",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "8 ounces fresh mushrooms, sliced",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 cup shredded mozzarella cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound lean ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 pound pasta",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (32 ounce) jar spaghetti sauce",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "1bd5293e-0674-473e-a419-8ecb73067040",
+            "Uri": "https://www.allrecipes.com/recipe/231064/kids-favorite-pizza-casserole/",
+            "Name": "Kid's Favorite Pizza Casserole",
+            "Ingredients": [
+              {
+                "DisplayLine": "2 cups elbow macaroni",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound shredded mozzarella cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (14 ounce) jar pizza sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 (4 ounce) can tomato sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (4.5 ounce) can sliced mushrooms, drained",
+                "IsInputMatch": true
+              }
+            ]
+          },
+          {
+            "Id": "5d461bd5-f6f7-42cd-81e0-e7102299d11f",
+            "Uri": "https://www.allrecipes.com/recipe/50436/stuffed-burgers/",
+            "Name": "Stuffed Burgers",
+            "Ingredients": [
+              {
+                "DisplayLine": "8 slices American cheese, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons fajita seasoning",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 pounds ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 (4 ounce) can sliced mushrooms, drained",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 tablespoons dried minced onion",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (10 fluid ounce) bottle steak sauce, (e.g. A-1), divided",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "2c08e95f-c62d-4ea5-afa9-55ba176d465b",
+            "Uri": "https://www.allrecipes.com/recipe/179694/philly-slow-cooker-beef-stroganoff/",
+            "Name": "PHILLY Slow-Cooker Beef Stroganoff",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/2 cup beef broth",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup chopped onions",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "225 grams fettuccine, cooked, drained",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon flour",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup chopped mushrooms",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 pound cubed stewing beef",
+                "IsInputMatch": true
+              }
+            ]
+          },
+          {
+            "Id": "929c5f02-1b39-4f6a-9b6a-31fc017c025d",
+            "Uri": "https://www.allrecipes.com/recipe/241726/slow-cooker-creamy-pot-roast/",
+            "Name": "Slow Cooker Creamy Pot Roast",
+            "Ingredients": [
+              {
+                "DisplayLine": "salt and ground black pepper to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (1 ounce) package dry onion soup mix",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (5 pound) boneless beef chuck roast",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 1/2 teaspoons minced garlic",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 (8 ounce) cans sliced mushrooms, drained",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 (10.75 ounce) can condensed cream of mushroom soup",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "6501d586-146a-477d-a757-f16e291b5252",
+            "Uri": "https://www.allrecipes.com/recipe/12318/beef-and-pepper-pie/",
+            "Name": "Beef and Pepper Pie",
+            "Ingredients": [
+              {
+                "DisplayLine": "2 cups sweet red peppers, with sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 onion, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup shredded sharp Cheddar cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (4.5 ounce) can sliced mushrooms, drained",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 pound lean ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 recipe pastry for a 9 inch double crust pie",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "f0d88546-495d-4936-8c43-603d79a2e833",
+            "Uri": "https://www.allrecipes.com/recipe/258596/savory-beef-broccoli-rice/",
+            "Name": "Savory Beef & Broccoli Rice",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 pound lean beef, cut into strips",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 cups water",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon butter",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cups broccoli florets",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 onion, diced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup mushrooms, chopped",
+                "IsInputMatch": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Id": "tf-idf",
+        "Name": "TF-IDF with structured data",
+        "Recommendations": [
+          {
+            "Id": "41131591-aaba-43aa-8c9d-635f749103c9",
+            "Uri": "https://www.allrecipes.com/recipe/140653/amandas-stuffed-peppers/",
+            "Name": "Amanda's Stuffed Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/2 cup bread crumbs",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon Italian seasoning",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 egg, lightly beaten",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "3/4 cup shredded mozzarella cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 small onion, finely chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 white mushrooms, chopped",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "3/4 cup grated Parmesan cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 cloves garlic, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 bell peppers, tops cut off and seeded",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 (26 ounce) can spaghetti sauce",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "c6943988-0f41-4251-9761-b13e1391d7f0",
+            "Uri": "https://www.allrecipes.com/recipe/180596/stuffed-jack-o-lantern-bell-peppers/",
+            "Name": "Stuffed Jack-O-Lantern Bell Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/4 teaspoon pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 bell peppers, any color",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "4 slices whole wheat bread, cubed",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 small onion, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 egg",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup chili sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup prepared yellow mustard",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 tablespoons Worcestershire sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cloves garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 small tomato, diced",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "c17f2f07-d626-483d-ae81-2161bb94b51d",
+            "Uri": "https://www.allrecipes.com/recipe/56412/mama-corleones-sausage-and-peppers/",
+            "Name": "Mama Corleone's Sausage and Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/4 cup extra virgin olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "5 assorted bell peppers, seeded and cut into strips",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "salt and pepper to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup minced flat leaf parsley",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon dried basil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon dried oregano",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "freshly grated Parmesan cheese to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 (4 ounce) links sweet Italian sausage",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 clove garlic, minced",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "c43f6ebc-4d7d-4ecd-b688-f59425fd1fc8",
+            "Uri": "https://www.allrecipes.com/recipe/77194/bolognese-stuffed-bell-peppers/",
+            "Name": "Bolognese Stuffed Bell Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "6 bell peppers (any color) stems and seeds removed, cut in half lengthwise",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 tablespoons olive oil, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 1/2 cups prepared marinara sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup cooked rice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 pound pancetta or lightly smoked bacon, diced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup red wine",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon red pepper flakes",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/8 cup celery",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1/3 cup heavy cream",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/8 cup minced carrots",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup grated Parmesan cheese, divided",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "35fe4a16-2aa5-443e-b5df-73fab5ee7628",
+            "Uri": "https://www.allrecipes.com/recipe/236359/beef-and-rice-stuffed-bell-peppers/",
+            "Name": "Beef and Rice Stuffed Bell Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 tablespoon chopped fresh flat-leaf parsley, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 onion, very thinly sliced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 teaspoon red pepper flakes",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup chopped fresh flat-leaf parsley",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 1/2 pounds lean ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 1/2 cups cooked rice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup freshly shredded Parmigiano-Reggiano cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 bell peppers",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 cup beef broth",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 cloves garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 teaspoons salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon freshly ground black pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 1/2 cups chunky tomato sauce",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "c16012bf-5f27-468e-a344-69e916e0dddc",
+            "Uri": "https://www.allrecipes.com/recipe/255038/sheet-pan-chicken-fajitas/",
+            "Name": "Sheet Pan Chicken Fajitas",
+            "Ingredients": [
+              {
+                "DisplayLine": "⅓ cup vegetable oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 teaspoon dried oregano",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 teaspoons chili powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon garlic powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon ground cumin",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon onion powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pinch ground cayenne pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 cups sliced bell peppers, any color",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "¼ teaspoon ground black pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 onion, sliced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "¼ cup chopped fresh cilantro",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 ½ pounds chicken tenders, quartered",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ lime, juiced",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "87f67496-dc60-4b0b-9c99-5c4992d699c2",
+            "Uri": "https://www.allrecipes.com/recipe/232019/cheddar-broccoli-and-chicken-casserole-from-country-crock/",
+            "Name": "Cheddar Broccoli and Chicken Casserole from Country Crock&#174;",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 1/2 cups 2% milk",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup all-purpose flour",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cups cut-up cooked chicken breast",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 cups vegetables such as broccoli florets and red bell peppers",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 1/4 cups finely shredded low-fat Cheddar cheese, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon onion powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 tablespoons Country Crock&#174; Spread, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup panko bread crumbs",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "2c9a2729-fd04-4ef3-97b6-aa58c9861c1e",
+            "Uri": "https://www.allrecipes.com/recipe/245924/smoked-sausage-and-orzo-stuffed-peppers/",
+            "Name": "Smoked Sausage and Orzo Stuffed Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 tablespoon olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 clove garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon white wine vinegar",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon Italian seasoning",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup shredded mozzarella cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 medium onion, 1/2-inch dice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cups orzo pasta, cooked according to package directions",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 teaspoon ground cinnamon",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 3/4 cups marinara sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 bell peppers",
+                "IsInputMatch": true
+              }
+            ]
+          },
+          {
+            "Id": "b960a60a-e0a6-40d1-a08d-cbe78e97c2ba",
+            "Uri": "https://www.allrecipes.com/recipe/256219/stuffed-peppers-from-green-giant/",
+            "Name": "Stuffed Peppers from Green Giant&#174;",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/2 teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound ground turkey or chicken",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 1/2 cups shredded mozzarella cheese, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 small onion, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cloves garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (15 ounce) can tomato sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon Italian seasoning",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons grated Parmesan cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 medium red or green bell peppers, halved lengthwise and seeded",
+                "IsInputMatch": true
+              }
+            ]
+          },
+          {
+            "Id": "cca8b5dd-d42e-4efd-aa41-83c1536961a9",
+            "Uri": "https://www.allrecipes.com/recipe/77520/pizza-with-pepper-onion-and-feta/",
+            "Name": "Pizza with Pepper, Onion and Feta",
+            "Ingredients": [
+              {
+                "DisplayLine": "3 cups chopped bell peppers (red, green, yellow)",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "Salt, to taste (optional)",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 1/2 teaspoons dried Italian herbs",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons extra-virgin olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3/4 cup crumbled herbed feta cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 cloves garlic, crushed",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup sliced red or yellow onion, pulled into rings",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "Crushed red pepper flakes, to taste (optional)",
+                "IsInputMatch": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Id": "tf-idf-text",
+        "Name": "TF-IDF with text data",
+        "Recommendations": [
+          {
+            "Id": "2560202a-16b2-4774-8195-1b4b80367b0f",
+            "Uri": "https://www.allrecipes.com/recipe/105016/simple-and-easy-stuffed-peppers/",
+            "Name": "Simple and Easy Stuffed Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 1/4 pounds ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 1/2 cups chicken broth",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 red bell peppers",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 cup shredded Cheddar cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 onion, diced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (15.5 ounce) can diced tomatoes",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 cloves garlic, minced",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "e1937997-d1d3-4ef6-8d9c-fe61a7732d87",
+            "Uri": "https://www.allrecipes.com/recipe/23604/spaghetti-skillet-dinner/",
+            "Name": "Spaghetti Skillet Dinner",
+            "Ingredients": [
+              {
+                "DisplayLine": "salt and pepper to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup chopped green bell peppers",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 cup sliced mushrooms",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 cup chopped onions",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound lean ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 1/2 teaspoons Italian seasoning",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup water",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "12 ounces spaghetti, broken into pieces",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (28 ounce) can whole peeled tomatoes, with liquid",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup shredded mozzarella cheese",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "b3c307a7-e301-4ae5-9365-89f4eeb26545",
+            "Uri": "https://www.allrecipes.com/recipe/9032/easy-skillet-chicken-a-la-king/",
+            "Name": "Easy Skillet Chicken a la King",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 tablespoon olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup fresh sliced mushrooms",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 pound skinless, boneless chicken breast halves - cut into bite-size pieces",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (10.75 ounce) can condensed cream of chicken soup",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons chopped pimento peppers",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "½ teaspoon ground black pepper",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 teaspoon onion powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup milk",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "28bbb13f-bce7-464c-a0a2-6a6d9db29689",
+            "Uri": "https://www.allrecipes.com/recipe/25195/saucy-stuffed-peppers/",
+            "Name": "Saucy Stuffed Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "ground black pepper to taste",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 large yellow onion, diced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 gallon tomato juice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 tablespoons butter",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "8 large green bell peppers",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 1/2 pounds ground round",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 cup uncooked white rice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "salt to taste",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "4e6a45c8-045a-4bf1-a47b-f1f7d789bb21",
+            "Uri": "https://www.allrecipes.com/recipe/82461/valentine-meatballs/",
+            "Name": "Valentine Meatballs",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 cup chopped fresh mushrooms",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 cup shredded Swiss cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 pounds lean ground beef",
+                "IsInputMatch": true
+              }
+            ]
+          },
+          {
+            "Id": "fce40eed-fff4-4ffd-9728-fe459d7147f3",
+            "Uri": "https://www.allrecipes.com/recipe/17991/stuffed-green-peppers-i/",
+            "Name": "Stuffed Green Peppers I",
+            "Ingredients": [
+              {
+                "DisplayLine": "salt to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 green bell peppers",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1/3 cup chopped onion",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "salt and pepper to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (14.5 ounce) can whole peeled tomatoes, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1/2 cup water",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup shredded Cheddar cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup uncooked rice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 (10.75 ounce) cans condensed tomato soup",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "water as needed",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 teaspoon Worcestershire sauce",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "3a3a0ea1-59c1-488f-98ba-a2edd90d651d",
+            "Uri": "https://www.allrecipes.com/recipe/21719/chicken-chile-spaghetti/",
+            "Name": "Chicken Chile Spaghetti",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 pound processed cheese, cubed",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (2 to 3 pound) whole chicken",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 stalks celery, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "¾ cup butter",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 onion, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 green bell pepper, chopped",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 clove garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 (10 ounce) cans diced tomatoes with green chile peppers",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 (4.5 ounce) cans sliced mushrooms",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "12 ounces vermicelli pasta",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "6e05fa15-110b-4e3c-8274-a17146cc591b",
+            "Uri": "https://www.allrecipes.com/recipe/18295/hungarian-stuffed-yellow-peppers/",
+            "Name": "Hungarian Stuffed Yellow Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "9 yellow bell peppers",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 pounds lean ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "salt and pepper to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon all-purpose flour",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup uncooked white rice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 egg",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 onion, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 (12 fluid ounce) cans tomato juice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup sour cream",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "29cee16e-35e8-4a85-b4d2-2ccdf01d2ae4",
+            "Uri": "https://www.allrecipes.com/recipe/68813/spicy-basil-chicken/",
+            "Name": "Spicy Basil Chicken",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 cup fresh mushrooms",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "3 hot chile peppers",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 cloves garlic",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 ½ teaspoons white sugar",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound skinless, boneless chicken breast halves - cut into bite-size pieces",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 teaspoon black pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 teaspoon garlic salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup chopped onions",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 bunch fresh basil leaves",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "5 tablespoons oyster sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons chili oil",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "84c46ee1-712e-4b5c-9326-ba55e1f46316",
+            "Uri": "https://www.allrecipes.com/recipe/16330/stuffed-peppers/",
+            "Name": "Stuffed Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1/2 cup uncooked long grain white rice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup water",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 green bell peppers",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 (8 ounce) cans tomato sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon Worcestershire sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 teaspoon garlic powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 teaspoon onion powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 teaspoon Italian seasoning",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "salt and pepper to taste",
+                "IsInputMatch": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Id": "f2v-256-10",
+        "Name": "Food2Vec 256/10 (mean)",
+        "Recommendations": [
+          {
+            "Id": "41131591-aaba-43aa-8c9d-635f749103c9",
+            "Uri": "https://www.allrecipes.com/recipe/140653/amandas-stuffed-peppers/",
+            "Name": "Amanda's Stuffed Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/2 cup bread crumbs",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon Italian seasoning",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 egg, lightly beaten",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "3/4 cup shredded mozzarella cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 small onion, finely chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 white mushrooms, chopped",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "3/4 cup grated Parmesan cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 cloves garlic, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 bell peppers, tops cut off and seeded",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 (26 ounce) can spaghetti sauce",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "c6943988-0f41-4251-9761-b13e1391d7f0",
+            "Uri": "https://www.allrecipes.com/recipe/180596/stuffed-jack-o-lantern-bell-peppers/",
+            "Name": "Stuffed Jack-O-Lantern Bell Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/4 teaspoon pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 bell peppers, any color",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "4 slices whole wheat bread, cubed",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 small onion, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 egg",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup chili sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup prepared yellow mustard",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 tablespoons Worcestershire sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cloves garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 small tomato, diced",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "c43f6ebc-4d7d-4ecd-b688-f59425fd1fc8",
+            "Uri": "https://www.allrecipes.com/recipe/77194/bolognese-stuffed-bell-peppers/",
+            "Name": "Bolognese Stuffed Bell Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "6 bell peppers (any color) stems and seeds removed, cut in half lengthwise",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 tablespoons olive oil, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 1/2 cups prepared marinara sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup cooked rice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 pound pancetta or lightly smoked bacon, diced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup red wine",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon red pepper flakes",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/8 cup celery",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1/3 cup heavy cream",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/8 cup minced carrots",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup grated Parmesan cheese, divided",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "35fe4a16-2aa5-443e-b5df-73fab5ee7628",
+            "Uri": "https://www.allrecipes.com/recipe/236359/beef-and-rice-stuffed-bell-peppers/",
+            "Name": "Beef and Rice Stuffed Bell Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 tablespoon chopped fresh flat-leaf parsley, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 onion, very thinly sliced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 teaspoon red pepper flakes",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup chopped fresh flat-leaf parsley",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 1/2 pounds lean ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 1/2 cups cooked rice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup freshly shredded Parmigiano-Reggiano cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 bell peppers",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 cup beef broth",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 cloves garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 teaspoons salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon freshly ground black pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 1/2 cups chunky tomato sauce",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "c17f2f07-d626-483d-ae81-2161bb94b51d",
+            "Uri": "https://www.allrecipes.com/recipe/56412/mama-corleones-sausage-and-peppers/",
+            "Name": "Mama Corleone's Sausage and Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/4 cup extra virgin olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "5 assorted bell peppers, seeded and cut into strips",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "salt and pepper to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup minced flat leaf parsley",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon dried basil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon dried oregano",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "freshly grated Parmesan cheese to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 (4 ounce) links sweet Italian sausage",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 clove garlic, minced",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "87f67496-dc60-4b0b-9c99-5c4992d699c2",
+            "Uri": "https://www.allrecipes.com/recipe/232019/cheddar-broccoli-and-chicken-casserole-from-country-crock/",
+            "Name": "Cheddar Broccoli and Chicken Casserole from Country Crock&#174;",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 1/2 cups 2% milk",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup all-purpose flour",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cups cut-up cooked chicken breast",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 cups vegetables such as broccoli florets and red bell peppers",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 1/4 cups finely shredded low-fat Cheddar cheese, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon onion powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 tablespoons Country Crock&#174; Spread, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup panko bread crumbs",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "2c9a2729-fd04-4ef3-97b6-aa58c9861c1e",
+            "Uri": "https://www.allrecipes.com/recipe/245924/smoked-sausage-and-orzo-stuffed-peppers/",
+            "Name": "Smoked Sausage and Orzo Stuffed Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 tablespoon olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 clove garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon white wine vinegar",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon Italian seasoning",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup shredded mozzarella cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 medium onion, 1/2-inch dice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cups orzo pasta, cooked according to package directions",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 teaspoon ground cinnamon",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 3/4 cups marinara sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 bell peppers",
+                "IsInputMatch": true
+              }
+            ]
+          },
+          {
+            "Id": "5614c078-5a72-4a31-bbe2-8f44f3c3e599",
+            "Uri": "https://www.allrecipes.com/recipe/233830/easy-santa-fe-style-stuffed-peppers/",
+            "Name": "Easy Santa Fe Style Stuffed Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "4 large bell peppers, tops and seeds removed",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "Nonstick cooking spray",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup shredded Colby-Monterey Jack cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (10 ounce) package frozen whole kernel corn",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup Minute&#174; Brown Rice, uncooked",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound lean ground beef*",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "cca8b5dd-d42e-4efd-aa41-83c1536961a9",
+            "Uri": "https://www.allrecipes.com/recipe/77520/pizza-with-pepper-onion-and-feta/",
+            "Name": "Pizza with Pepper, Onion and Feta",
+            "Ingredients": [
+              {
+                "DisplayLine": "3 cups chopped bell peppers (red, green, yellow)",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "Salt, to taste (optional)",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 1/2 teaspoons dried Italian herbs",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons extra-virgin olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3/4 cup crumbled herbed feta cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 cloves garlic, crushed",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup sliced red or yellow onion, pulled into rings",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "Crushed red pepper flakes, to taste (optional)",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "c16012bf-5f27-468e-a344-69e916e0dddc",
+            "Uri": "https://www.allrecipes.com/recipe/255038/sheet-pan-chicken-fajitas/",
+            "Name": "Sheet Pan Chicken Fajitas",
+            "Ingredients": [
+              {
+                "DisplayLine": "⅓ cup vegetable oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 teaspoon dried oregano",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 teaspoons chili powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon garlic powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon ground cumin",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon onion powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pinch ground cayenne pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 cups sliced bell peppers, any color",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "¼ teaspoon ground black pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 onion, sliced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "¼ cup chopped fresh cilantro",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 ½ pounds chicken tenders, quartered",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ lime, juiced",
+                "IsInputMatch": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Id": "f2v-256-10-tf",
+        "Name": "Food2Vec 256/10 (TF weighted mean)",
+        "Recommendations": [
+          {
+            "Id": "41131591-aaba-43aa-8c9d-635f749103c9",
+            "Uri": "https://www.allrecipes.com/recipe/140653/amandas-stuffed-peppers/",
+            "Name": "Amanda's Stuffed Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/2 cup bread crumbs",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon Italian seasoning",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 egg, lightly beaten",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "3/4 cup shredded mozzarella cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 small onion, finely chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 white mushrooms, chopped",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "3/4 cup grated Parmesan cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 cloves garlic, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 bell peppers, tops cut off and seeded",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 (26 ounce) can spaghetti sauce",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "c43f6ebc-4d7d-4ecd-b688-f59425fd1fc8",
+            "Uri": "https://www.allrecipes.com/recipe/77194/bolognese-stuffed-bell-peppers/",
+            "Name": "Bolognese Stuffed Bell Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "6 bell peppers (any color) stems and seeds removed, cut in half lengthwise",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 tablespoons olive oil, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 1/2 cups prepared marinara sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup cooked rice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 pound pancetta or lightly smoked bacon, diced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup red wine",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon red pepper flakes",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/8 cup celery",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1/3 cup heavy cream",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/8 cup minced carrots",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup grated Parmesan cheese, divided",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "c6943988-0f41-4251-9761-b13e1391d7f0",
+            "Uri": "https://www.allrecipes.com/recipe/180596/stuffed-jack-o-lantern-bell-peppers/",
+            "Name": "Stuffed Jack-O-Lantern Bell Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/4 teaspoon pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 bell peppers, any color",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "4 slices whole wheat bread, cubed",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 small onion, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 egg",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup chili sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup prepared yellow mustard",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 tablespoons Worcestershire sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cloves garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 small tomato, diced",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "35fe4a16-2aa5-443e-b5df-73fab5ee7628",
+            "Uri": "https://www.allrecipes.com/recipe/236359/beef-and-rice-stuffed-bell-peppers/",
+            "Name": "Beef and Rice Stuffed Bell Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 tablespoon chopped fresh flat-leaf parsley, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 onion, very thinly sliced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 teaspoon red pepper flakes",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup chopped fresh flat-leaf parsley",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 1/2 pounds lean ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 1/2 cups cooked rice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup freshly shredded Parmigiano-Reggiano cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 bell peppers",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 cup beef broth",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 cloves garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 teaspoons salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon freshly ground black pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 1/2 cups chunky tomato sauce",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "c17f2f07-d626-483d-ae81-2161bb94b51d",
+            "Uri": "https://www.allrecipes.com/recipe/56412/mama-corleones-sausage-and-peppers/",
+            "Name": "Mama Corleone's Sausage and Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/4 cup extra virgin olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "5 assorted bell peppers, seeded and cut into strips",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "salt and pepper to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup minced flat leaf parsley",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon dried basil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon dried oregano",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "freshly grated Parmesan cheese to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 (4 ounce) links sweet Italian sausage",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 clove garlic, minced",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "87f67496-dc60-4b0b-9c99-5c4992d699c2",
+            "Uri": "https://www.allrecipes.com/recipe/232019/cheddar-broccoli-and-chicken-casserole-from-country-crock/",
+            "Name": "Cheddar Broccoli and Chicken Casserole from Country Crock&#174;",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 1/2 cups 2% milk",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup all-purpose flour",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cups cut-up cooked chicken breast",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 cups vegetables such as broccoli florets and red bell peppers",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 1/4 cups finely shredded low-fat Cheddar cheese, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon onion powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 tablespoons Country Crock&#174; Spread, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup panko bread crumbs",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "c16012bf-5f27-468e-a344-69e916e0dddc",
+            "Uri": "https://www.allrecipes.com/recipe/255038/sheet-pan-chicken-fajitas/",
+            "Name": "Sheet Pan Chicken Fajitas",
+            "Ingredients": [
+              {
+                "DisplayLine": "⅓ cup vegetable oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 teaspoon dried oregano",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 teaspoons chili powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon garlic powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon ground cumin",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon onion powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pinch ground cayenne pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 cups sliced bell peppers, any color",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "¼ teaspoon ground black pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 onion, sliced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "¼ cup chopped fresh cilantro",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 ½ pounds chicken tenders, quartered",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ lime, juiced",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "2c9a2729-fd04-4ef3-97b6-aa58c9861c1e",
+            "Uri": "https://www.allrecipes.com/recipe/245924/smoked-sausage-and-orzo-stuffed-peppers/",
+            "Name": "Smoked Sausage and Orzo Stuffed Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 tablespoon olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 clove garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon white wine vinegar",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon Italian seasoning",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup shredded mozzarella cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 medium onion, 1/2-inch dice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cups orzo pasta, cooked according to package directions",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 teaspoon ground cinnamon",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 3/4 cups marinara sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 bell peppers",
+                "IsInputMatch": true
+              }
+            ]
+          },
+          {
+            "Id": "cca8b5dd-d42e-4efd-aa41-83c1536961a9",
+            "Uri": "https://www.allrecipes.com/recipe/77520/pizza-with-pepper-onion-and-feta/",
+            "Name": "Pizza with Pepper, Onion and Feta",
+            "Ingredients": [
+              {
+                "DisplayLine": "3 cups chopped bell peppers (red, green, yellow)",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "Salt, to taste (optional)",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 1/2 teaspoons dried Italian herbs",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons extra-virgin olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3/4 cup crumbled herbed feta cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 cloves garlic, crushed",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup sliced red or yellow onion, pulled into rings",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "Crushed red pepper flakes, to taste (optional)",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "5614c078-5a72-4a31-bbe2-8f44f3c3e599",
+            "Uri": "https://www.allrecipes.com/recipe/233830/easy-santa-fe-style-stuffed-peppers/",
+            "Name": "Easy Santa Fe Style Stuffed Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "4 large bell peppers, tops and seeds removed",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "Nonstick cooking spray",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup shredded Colby-Monterey Jack cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (10 ounce) package frozen whole kernel corn",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup Minute&#174; Brown Rice, uncooked",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound lean ground beef*",
+                "IsInputMatch": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Id": "f2v-256-10-tf-idf",
+        "Name": "Food2Vec 256/10 (TF-IDF weighted mean)",
+        "Recommendations": [
+          {
+            "Id": "41131591-aaba-43aa-8c9d-635f749103c9",
+            "Uri": "https://www.allrecipes.com/recipe/140653/amandas-stuffed-peppers/",
+            "Name": "Amanda's Stuffed Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/2 cup bread crumbs",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon Italian seasoning",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 egg, lightly beaten",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "3/4 cup shredded mozzarella cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 small onion, finely chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 white mushrooms, chopped",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "3/4 cup grated Parmesan cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 cloves garlic, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 bell peppers, tops cut off and seeded",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 (26 ounce) can spaghetti sauce",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "c6943988-0f41-4251-9761-b13e1391d7f0",
+            "Uri": "https://www.allrecipes.com/recipe/180596/stuffed-jack-o-lantern-bell-peppers/",
+            "Name": "Stuffed Jack-O-Lantern Bell Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/4 teaspoon pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 bell peppers, any color",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "4 slices whole wheat bread, cubed",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 small onion, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 egg",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup chili sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup prepared yellow mustard",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 tablespoons Worcestershire sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cloves garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 small tomato, diced",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "c43f6ebc-4d7d-4ecd-b688-f59425fd1fc8",
+            "Uri": "https://www.allrecipes.com/recipe/77194/bolognese-stuffed-bell-peppers/",
+            "Name": "Bolognese Stuffed Bell Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "6 bell peppers (any color) stems and seeds removed, cut in half lengthwise",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 tablespoons olive oil, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 1/2 cups prepared marinara sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup cooked rice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 pound pancetta or lightly smoked bacon, diced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup red wine",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon red pepper flakes",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/8 cup celery",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1/3 cup heavy cream",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/8 cup minced carrots",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup grated Parmesan cheese, divided",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "b960a60a-e0a6-40d1-a08d-cbe78e97c2ba",
+            "Uri": "https://www.allrecipes.com/recipe/256219/stuffed-peppers-from-green-giant/",
+            "Name": "Stuffed Peppers from Green Giant&#174;",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/2 teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound ground turkey or chicken",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 1/2 cups shredded mozzarella cheese, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 small onion, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cloves garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (15 ounce) can tomato sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon Italian seasoning",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons grated Parmesan cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 medium red or green bell peppers, halved lengthwise and seeded",
+                "IsInputMatch": true
+              }
+            ]
+          },
+          {
+            "Id": "c17f2f07-d626-483d-ae81-2161bb94b51d",
+            "Uri": "https://www.allrecipes.com/recipe/56412/mama-corleones-sausage-and-peppers/",
+            "Name": "Mama Corleone's Sausage and Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/4 cup extra virgin olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "5 assorted bell peppers, seeded and cut into strips",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "salt and pepper to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup minced flat leaf parsley",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon dried basil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon dried oregano",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "freshly grated Parmesan cheese to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 (4 ounce) links sweet Italian sausage",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 clove garlic, minced",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "c16012bf-5f27-468e-a344-69e916e0dddc",
+            "Uri": "https://www.allrecipes.com/recipe/255038/sheet-pan-chicken-fajitas/",
+            "Name": "Sheet Pan Chicken Fajitas",
+            "Ingredients": [
+              {
+                "DisplayLine": "⅓ cup vegetable oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 teaspoon dried oregano",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 teaspoons chili powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon garlic powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon ground cumin",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon onion powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pinch ground cayenne pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 cups sliced bell peppers, any color",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "¼ teaspoon ground black pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 onion, sliced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "¼ cup chopped fresh cilantro",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 ½ pounds chicken tenders, quartered",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "½ lime, juiced",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "87f67496-dc60-4b0b-9c99-5c4992d699c2",
+            "Uri": "https://www.allrecipes.com/recipe/232019/cheddar-broccoli-and-chicken-casserole-from-country-crock/",
+            "Name": "Cheddar Broccoli and Chicken Casserole from Country Crock&#174;",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 1/2 cups 2% milk",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup all-purpose flour",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cups cut-up cooked chicken breast",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 cups vegetables such as broccoli florets and red bell peppers",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "2 1/4 cups finely shredded low-fat Cheddar cheese, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon onion powder",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 tablespoons Country Crock&#174; Spread, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup panko bread crumbs",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "35fe4a16-2aa5-443e-b5df-73fab5ee7628",
+            "Uri": "https://www.allrecipes.com/recipe/236359/beef-and-rice-stuffed-bell-peppers/",
+            "Name": "Beef and Rice Stuffed Bell Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 tablespoon chopped fresh flat-leaf parsley, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 onion, very thinly sliced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 teaspoon red pepper flakes",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup chopped fresh flat-leaf parsley",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 1/2 pounds lean ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 1/2 cups cooked rice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup freshly shredded Parmigiano-Reggiano cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "6 bell peppers",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 cup beef broth",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 cloves garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 teaspoons salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon freshly ground black pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 1/2 cups chunky tomato sauce",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "5614c078-5a72-4a31-bbe2-8f44f3c3e599",
+            "Uri": "https://www.allrecipes.com/recipe/233830/easy-santa-fe-style-stuffed-peppers/",
+            "Name": "Easy Santa Fe Style Stuffed Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "4 large bell peppers, tops and seeds removed",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "Nonstick cooking spray",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup shredded Colby-Monterey Jack cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (10 ounce) package frozen whole kernel corn",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup Minute&#174; Brown Rice, uncooked",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound lean ground beef*",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "cca8b5dd-d42e-4efd-aa41-83c1536961a9",
+            "Uri": "https://www.allrecipes.com/recipe/77520/pizza-with-pepper-onion-and-feta/",
+            "Name": "Pizza with Pepper, Onion and Feta",
+            "Ingredients": [
+              {
+                "DisplayLine": "3 cups chopped bell peppers (red, green, yellow)",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "Salt, to taste (optional)",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 1/2 teaspoons dried Italian herbs",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons extra-virgin olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3/4 cup crumbled herbed feta cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 cloves garlic, crushed",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup sliced red or yellow onion, pulled into rings",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "Crushed red pepper flakes, to taste (optional)",
+                "IsInputMatch": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "Id": "f2c-32-8-tf-idf-mmr",
+        "Name": "Food2Vec 32/8 (TF-IDF weighted mean, MMR)",
+        "Recommendations": [
+          {
+            "Id": "b960a60a-e0a6-40d1-a08d-cbe78e97c2ba",
+            "Uri": "https://www.allrecipes.com/recipe/256219/stuffed-peppers-from-green-giant/",
+            "Name": "Stuffed Peppers from Green Giant&#174;",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/2 teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound ground turkey or chicken",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 1/2 cups shredded mozzarella cheese, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 small onion, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cloves garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (15 ounce) can tomato sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon Italian seasoning",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons grated Parmesan cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 medium red or green bell peppers, halved lengthwise and seeded",
+                "IsInputMatch": true
+              }
+            ]
+          },
+          {
+            "Id": "bcfbefe3-8afe-4a4f-b19a-43e2af3ea9ff",
+            "Uri": "https://www.allrecipes.com/recipe/187351/exchange-gang-pasta-with-shrimp/",
+            "Name": "Exchange Gang Pasta with Shrimp",
+            "Ingredients": [
+              {
+                "DisplayLine": "1/2 pound spaghetti",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup grape tomatoes, quartered",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 shallots, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound uncooked medium shrimp, peeled and deveined",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cloves garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons fresh lemon juice",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup shredded Parmesan cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "salt and ground black pepper to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup white wine",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup half-and-half cream",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cups torn fresh spinach leaves",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 tablespoons butter, divided",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup diced mushrooms",
+                "IsInputMatch": true
+              }
+            ]
+          },
+          {
+            "Id": "9b62e783-83f9-4a38-a76c-9ce154293cc4",
+            "Uri": "https://www.allrecipes.com/recipe/35062/hamburger-sarah-style/",
+            "Name": "Hamburger Sarah Style",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 egg",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup barbecue sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 finely chopped onion",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 cup ketchup",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup all-purpose flour, or as needed",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 dash Worcestershire sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 teaspoon yeast extract spread (optional)",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "8a40f3f5-2c36-47d5-b3cf-a1d37a24691e",
+            "Uri": "https://www.allrecipes.com/recipe/82897/lees-incredible-momos/",
+            "Name": "Lee's Incredible Momos",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 small onion, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound extra-lean ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "8 ounces spinach, rinsed and chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 clove garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 green onions, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 teaspoon grated fresh ginger root",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "salt to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon soy sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons chopped fresh cilantro",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon rice vinegar",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (1/2 inch) piece fresh ginger root, grated",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "12 wonton wrappers",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon chili oil",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "67847f13-d27c-4490-9236-4fd459d60576",
+            "Uri": "https://www.allrecipes.com/recipe/26668/tater-tot-casserole-iii/",
+            "Name": "Tater Tot Casserole III",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 (14.5 ounce) can French style green beans",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "10 3/4 fluid ounces skim milk",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 pound ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 (10.75 ounce) can condensed cream of mushroom soup",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 teaspoon garlic salt",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "0853d96a-1396-4166-a0a9-d5acbd022dcd",
+            "Uri": "https://www.allrecipes.com/recipe/152364/venison-steak-with-peppers-and-onions/",
+            "Name": "Venison Steak with Peppers and Onions",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 teaspoons soy sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 1/2 tablespoons beef broth",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 teaspoon ground white pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 1/2 tablespoons dry sherry",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound lean venison, cut into thin strips",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 teaspoons steak seasoning",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 teaspoon sugar-based curing mixture (such as Morton&#174; Tender Quick&#174;)",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon cornstarch",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons vegetable oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 onion, halved and sliced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 bell peppers, sliced into thin strips",
+                "IsInputMatch": true
+              }
+            ]
+          },
+          {
+            "Id": "c276e871-8155-449a-b2fa-f016d39783bc",
+            "Uri": "https://www.allrecipes.com/recipe/16882/chili-casserole/",
+            "Name": "Chili Casserole",
+            "Ingredients": [
+              {
+                "DisplayLine": "1 1/2 pounds ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1/2 cup chopped onion",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 stalks celery, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup taco sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (15 ounce) can chili",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (15 ounce) can corn",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup shredded Cheddar cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (8 ounce) package egg noodles",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "75cfeb07-0935-4b6c-8d41-e5d569b77a03",
+            "Uri": "https://www.allrecipes.com/recipe/276832/keto-turkey-stuffed-peppers/",
+            "Name": "Keto Turkey-Stuffed Peppers",
+            "Ingredients": [
+              {
+                "DisplayLine": "2 large bell peppers, any color - cut in half lengthwise, cored, and seeded",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "4 (1 inch) cubes Colby-Jack cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cups frozen cauliflower rice (such as Green Giant&#174;)",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 teaspoons sambal oelek chili paste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 tablespoon olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup water",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "8 slices pickled jalapeno peppers (optional)",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 cloves garlic, chopped",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (14.5 ounce) can diced tomatoes, undrained",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup diced onion",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 (8 ounce) can tomato sauce",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "aluminum foil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon salt",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound ground turkey",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 teaspoon freshly ground black pepper",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 tablespoons diced fresh jalapeno pepper, or to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "4 teaspoons reduced-fat sour cream",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "nonfat cooking spray",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "c14c8ed2-f71e-4073-9749-6f81be9b1a84",
+            "Uri": "https://www.allrecipes.com/recipe/192530/ros-spaghetti-and-meatballs/",
+            "Name": "RO's Spaghetti and Meatballs",
+            "Ingredients": [
+              {
+                "DisplayLine": "2 tablespoons chopped fresh basil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "Tomato Sauce:",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "Meatballs:",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 (14 ounce) cans diced tomatoes",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 large onion, sliced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "8 ounces ground beef",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1 (12 ounce) package spaghetti",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup graham cracker crumbs",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup chopped fresh parsley",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 eggs",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 tablespoons olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "3 cloves garlic, minced",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "2 tablespoons grated Parmesan cheese",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "salt and pepper to taste",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "chopped fresh basil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup olive oil",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "grated Parmesan cheese",
+                "IsInputMatch": false
+              }
+            ]
+          },
+          {
+            "Id": "773cdacb-e897-4411-ba37-941da69a5a01",
+            "Uri": "https://www.allrecipes.com/recipe/232355/squasage-sausage-stuffed-squash/",
+            "Name": "Squasage (Sausage-stuffed Squash)",
+            "Ingredients": [
+              {
+                "DisplayLine": "2 acorn squash, halved and seeded",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 pound ground sausage",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 cup chopped celery",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/4 cup chopped onion",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1 egg, beaten",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup chopped mushrooms",
+                "IsInputMatch": true
+              },
+              {
+                "DisplayLine": "1/2 cup sour cream",
+                "IsInputMatch": false
+              },
+              {
+                "DisplayLine": "1/2 cup grated Parmesan cheese",
+                "IsInputMatch": false
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
