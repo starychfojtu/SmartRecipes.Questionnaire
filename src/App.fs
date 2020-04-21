@@ -86,6 +86,20 @@ let sendRecipeToggledInteraction interaction methodIndexFromLeft user index reci
 
     Interactions.send (Interaction.Recipe interaction)
 
+let sendMethodInteraction rating methodIndexFromLeft user index =
+    let interaction = {
+        MethodRating = rating
+        MethodId = index.MethodId
+        Data = {
+            ScenarioIndex = index.ScenarioIndex
+            MethodIndexFromLeft = methodIndexFromLeft
+            User = user
+            TimeStamp = DateTime.UtcNow
+        }
+    }
+
+    Interactions.send (Interaction.Method interaction)
+
 let getMethodPosition methodIndex (scenarios: RecommendationScenario[]) =
     let scenario = scenarios.[methodIndex.ScenarioIndex]
     scenario.Recommendations |> Array.findIndex (fun r -> r.Id = methodIndex.MethodId)
@@ -124,7 +138,11 @@ let update (msg: Msg) (state: State) =
 
         ({ state with SelectedRecipeIds = Map.add index.ScenarioIndex newSelectedRecipeIds state.SelectedRecipeIds }, interactionCommand)
     | RateMethod (index, opinion) ->
-        ({ state with MethodRatings = Map.add index opinion state.MethodRatings }, Cmd.none)
+        let methodPosition = getMethodPosition index state.Scenarios
+        let interaction = sendMethodInteraction opinion methodPosition state.User
+        let interactionCommand = Cmd.OfPromise.either interaction index (fun _ -> Noop) (fun error -> ErrorOccured error)
+
+        ({ state with MethodRatings = Map.add index opinion state.MethodRatings }, interactionCommand)
     | ErrorOccured s ->
         window.alert (sprintf "Error occurred, please contact josef.starychfojtu@gmail.com with this and screen of console: %s %s" s.Message s.StackTrace)
         (state, Cmd.none)
