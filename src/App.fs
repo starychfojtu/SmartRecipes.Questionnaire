@@ -35,7 +35,7 @@ type State = {
 type Msg =
     | LoadData
     | DataLoaded of RecommendationScenario array
-    | NameChanged of string
+    | UserChanged of string * string
     | Start
     | ToggleRecipe of ScenarioIndex * RecipeId
     | RateMethod of MethodIndex * MethodOpinion
@@ -49,6 +49,7 @@ let init =
         User = {
             SessionId = Guid.NewGuid()
             Name = "anonymous"
+            Email = ""
         }
         Scenarios = [||]
         SelectedRecipeIds = Map.empty
@@ -78,8 +79,8 @@ let update (msg: Msg) (state: State) =
         let randomizedScenarios = scenarios |> Array.map (fun s -> { s with Recommendations = randomize s.Recommendations |> Seq.toArray })
         let emptySelectedRecipes = scenarios |> Array.mapi (fun index _ -> (index, Set.empty)) |> Map.ofArray
         ({ state with Scenarios = randomizedScenarios; SelectedRecipeIds = emptySelectedRecipes }, Cmd.none)
-    | NameChanged name ->
-        ({ state with User = { state.User with Name = name } }, Cmd.none)
+    | UserChanged (name, email) ->
+        ({ state with User = { state.User with Name = name; Email = email } }, Cmd.none)
     | Start ->
         if Array.isEmpty state.Scenarios
             then ({ state with CurrentPage = End }, Cmd.none)
@@ -107,7 +108,7 @@ module Html =
             prop.children children
         ]
 
-let initPage dispatch =
+let initPage dispatch user =
     Html.div [
         prop.className "container"
         prop.style [
@@ -125,9 +126,32 @@ let initPage dispatch =
                         style.marginRight 15
                     ]
                 ]
+            ]
+            Html.styledDiv "row" [
                 Html.input [
                     prop.type'.text
-                    prop.onTextChange (fun s -> dispatch <| NameChanged s)
+                    prop.style [
+                        style.marginBottom 10
+                    ]
+                    prop.onTextChange (fun s -> dispatch <| UserChanged (s, user.Email))
+                ]
+            ]
+            Html.styledDiv "row" [
+                Html.label [
+                    prop.text "Your email (optional, we will send results of the whole survey to those who will fill in):"
+                    prop.style [
+                        style.marginRight 15
+                    ]
+                ]
+            ]
+            Html.styledDiv "row" [
+                Html.input [
+                    prop.type'.text
+                    prop.style [
+                        style.marginBottom 10
+                        style.width 350
+                    ]
+                    prop.onTextChange (fun s -> dispatch <| UserChanged (user.Name, s))
                 ]
             ]
             Html.styledDiv "row" [
@@ -225,6 +249,9 @@ let renderMethodRating dispatch methodIndex (method: RecommendationMethod) (curr
             prop.text (Map.find method.Id methodAliases)
         ]
         Html.p [
+            prop.style [
+                style.marginBottom 0
+            ]
             prop.text (sprintf "%i Recipes liked" recipesLiked)
         ]
         Html.button [
@@ -327,7 +354,7 @@ let lastPage =
 
 let render (state: State) (dispatch: Msg -> unit) =
     match state.CurrentPage with
-    | Intro -> initPage dispatch
+    | Intro -> initPage dispatch state.User
     | Scenario index ->
         let scenario = state.Scenarios.[index]
         scenarioPage dispatch index (Array.length state.Scenarios) scenario (Map.find index state.SelectedRecipeIds) state.MethodRatings
