@@ -34,32 +34,36 @@ type RecommendationScenario = {
 }
 
 type User = {
+    SessionId: Guid
     Name: string
+    Email: string
 }
 
-type Interaction = Liked | Disliked
+type MethodOpinion =
+    | Bad
+    | Average
+    | Great
 
-type MousePosition = {
-    X: int
-    Y: int
-}
+type RecipeInteraction = Liked | Disliked | Viewed
 
-type RecipePosition = {
-    MethodPositionFromLeft: int
-    RecipePositionInMethod: int
-}
-
-type Metadata = {
-    MousePosition: MousePosition
-    RecipePosition: RecipePosition
+type InteractionData = {
+    ScenarioIndex: int
+    MethodIndexFromLeft: int
+    User: User
     TimeStamp: DateTime
 }
 
-type InteractionEvent = {
-    Interaction: Interaction
-    MethodId: RecommendationMethodId
+type RecipeInteractionEvent = {
+    RecipeInteraction: RecipeInteraction
     RecipeId: RecipeId
-    RecipeUri: Uri
-    UserName: string
-    Metadata: Metadata
+    MethodId: RecommendationMethodId
+    Data: InteractionData
 }
+
+type MethodInteractionEvent = {
+    MethodRating: MethodOpinion
+    MethodId: RecommendationMethodId
+    Data: InteractionData
+}
+
+type Interaction = Recipe of RecipeInteractionEvent | Method of MethodInteractionEvent
