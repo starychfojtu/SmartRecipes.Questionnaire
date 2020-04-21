@@ -13,6 +13,7 @@ type ScenarioIndex = int
 
 type Page =
     | Intro
+    | Tutorial
     | Scenario of ScenarioIndex
     | End
 
@@ -34,6 +35,7 @@ type Msg =
     | LoadData
     | DataLoaded of RecommendationScenario array
     | UserChanged of string * string
+    | ShowTutorial
     | Start
     | ToggleRecipe of MethodIndex * RecipeId
     | ViewRecipe of MethodIndex * RecipeId
@@ -127,6 +129,8 @@ let update (msg: Msg) (state: State) =
         ({ state with Scenarios = randomizedScenarios; SelectedRecipeIds = emptySelectedRecipes }, Cmd.none)
     | UserChanged (name, email) ->
         ({ state with User = { state.User with Name = name; Email = email } }, Cmd.none)
+    | ShowTutorial ->
+       ({ state with CurrentPage = Tutorial }, Cmd.none)
     | Start ->
         if Array.isEmpty state.Scenarios
             then ({ state with CurrentPage = End }, Cmd.none)
@@ -223,9 +227,39 @@ let initPage dispatch user =
             ]
             Html.styledDiv "row" [
                 Html.button [
-                    prop.onClick (fun _ -> dispatch Start)
+                    prop.onClick (fun _ -> dispatch ShowTutorial)
                     prop.className "btn btn-primary"
                     prop.text "Start"
+                ]
+            ]
+        ]
+    ]
+
+let tutorialPage dispatch =
+    Html.div [
+        prop.className "container"
+        prop.style [
+            style.paddingTop (length.perc 10)
+        ]
+        prop.children [
+            Html.styledDiv "row" [
+                Html.h1 "How this works ?"
+                Html.p
+                    @"The concept of SmartRecipes is that you go shopping and have some ingredients in your basket.
+                    SmartRecipes will recommend you recipes based on that, so you can finish your shopping according to them.
+                    This survey helps to pick the right method to do that."
+                Html.p
+                    @"There will be 6 scenarios. In each scenario, your shopping basket is given alongside with some situation about your intentions.
+                    Then there are 6 methods (named Alpha, Beta..) recommending you recipes. The final application will consist only of a single list, not 6.
+                    Thus evaluate them separately in the following way. For each method, go thru its recipes. If you like the recipe based on the basket and scenario, click on it.
+                    If you change your mind, just click on it again. At the and of the list, give the method your overall impression (Good/Ok/Bad) at the bottom and move to the next one.
+                    There is amount of ingredients actually used in liked recipes displayed above the method rating and number of liked recipes to help you decide."
+            ]
+            Html.styledDiv "row" [
+                Html.button [
+                    prop.onClick (fun _ -> dispatch Start)
+                    prop.className "btn btn-primary"
+                    prop.text "Go to first scenario"
                 ]
             ]
         ]
@@ -442,6 +476,7 @@ let lastPage =
 let render (state: State) (dispatch: Msg -> unit) =
     match state.CurrentPage with
     | Intro -> initPage dispatch state.User
+    | Tutorial -> tutorialPage dispatch
     | Scenario index ->
         let scenario = state.Scenarios.[index]
         scenarioPage dispatch index (Array.length state.Scenarios) scenario (Map.find index state.SelectedRecipeIds) state.MethodRatings
