@@ -111,7 +111,7 @@ let allowedMethodIds = [
     "tf-idf-cal";
     "tf-idf-mmr";
     "tf-idf";
-    "f2v-256-10";
+    "jaccard";
 ]
 
 let useMethod (method: RecommendationMethod) =
@@ -299,7 +299,7 @@ let methodAliases = Map.ofList [
     ("tf-idf-cal", "Gamma")
     ("tf-idf-mmr", "Delta")
     ("tf-idf", "Epsilon")
-    ("f2v-256-10", "Zeta")
+    ("jaccard", "Zeta")
 ]
 
 let recipeViewCount = 6
