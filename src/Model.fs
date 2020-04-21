@@ -3,6 +3,7 @@
 open System
 
 type Ingredient = {
+    FoodstuffId: string
     DisplayLine: string
     IsInputMatch: bool
 }

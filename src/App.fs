@@ -311,13 +311,21 @@ let renderMethod dispatch index (method: RecommendationMethod) selectedRecipeIds
             renderRecipe dispatch index recipe (Set.contains recipe.Id selectedRecipeIds)
     ]
 
-let renderMethodRating dispatch methodIndex (method: RecommendationMethod) (currentOpinion: MethodOpinion option) recipesLiked =
+let renderMethodRating dispatch methodIndex (method: RecommendationMethod) (currentOpinion: MethodOpinion option) likedRecipeIds inputCount =
     let nameClassName =
         match currentOpinion with
         | Some Great -> "text-success"
         | Some Average -> "text-info"
         | Some Bad -> "text-danger"
         | _ -> ""
+
+    let likedRecipes = method.Recommendations |> Array.where (fun r -> Set.contains r.Id likedRecipeIds)
+    let distinctIngredientCount =
+        likedRecipes
+        |> Seq.collect (fun r -> r.Ingredients)
+        |> Seq.filter (fun i -> i.IsInputMatch)
+        |> Seq.distinctBy (fun r -> r.FoodstuffId)
+        |> Seq.length
 
     Html.styledDiv "col-2" [
         Html.h3 [
@@ -328,7 +336,13 @@ let renderMethodRating dispatch methodIndex (method: RecommendationMethod) (curr
             prop.style [
                 style.marginBottom 0
             ]
-            prop.text (sprintf "%i Recipes liked" recipesLiked)
+            prop.text (sprintf "%i Recipes liked" likedRecipes.Length)
+        ]
+        Html.p [
+            prop.style [
+                style.marginBottom 0
+            ]
+            prop.text (sprintf "%i/%i input ingredient covered" distinctIngredientCount inputCount)
         ]
         Html.button [
             prop.className "btn btn-success"
@@ -399,8 +413,8 @@ let scenarioPage dispatch index totalScenarios scenario selectedRecipeIds method
                             MethodId = method.Id
                         }
                         let methodRecipes = method.Recommendations |> Array.map (fun r -> r.Id) |> Set.ofArray
-                        let recipesLiked = Set.intersect selectedRecipeIds methodRecipes |> Set.count
-                        renderMethodRating dispatch methodIndex method (Map.tryFind methodIndex methodRatings) recipesLiked
+                        let likedRecipeIds = Set.intersect selectedRecipeIds methodRecipes |> Set.ofSeq
+                        renderMethodRating dispatch methodIndex method (Map.tryFind methodIndex methodRatings) likedRecipeIds scenario.Input.Length
                 ]
                 Html.button [
                     prop.onClick (fun _ -> dispatch <| FinishScenario index)
