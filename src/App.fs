@@ -6,6 +6,7 @@ open Elmish.React
 open Model
 open System
 open System
+open System
 open FSharp.Core
 open Feliz
 open Fetch
@@ -263,11 +264,11 @@ let allowedMethodIds = [
 let showMethod (method: RecommendationMethod) =
     List.contains method.Id allowedMethodIds
 
-let scenarioPage dispatch index scenario selectedRecipeIds methodRatings =
+let scenarioPage dispatch index totalScenarios scenario selectedRecipeIds methodRatings =
     let methods = scenario.Recommendations |> Array.filter showMethod
     Html.div [
         Html.styledDiv "container-fluid" [
-            Html.h3 "Scenario:"
+            Html.h3 (sprintf "Scenario (%i/%i):" (index + 1) totalScenarios)
             Html.paragraph scenario.Description
             Html.h3 "Your basket contains:"
             Html.unorderedList (scenario.Input |> Array.map Html.listItem)
@@ -323,7 +324,7 @@ let render (state: State) (dispatch: Msg -> unit) =
     | Intro -> initPage dispatch
     | Scenario index ->
         let scenario = state.Scenarios.[index]
-        scenarioPage dispatch index scenario (Map.find index state.SelectedRecipeIds) state.MethodRatings
+        scenarioPage dispatch index (Array.length state.Scenarios) scenario (Map.find index state.SelectedRecipeIds) state.MethodRatings
     | End -> lastPage
 
 Program.mkProgram (fun _ -> (init, Cmd.ofMsg LoadData)) update render
