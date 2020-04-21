@@ -284,10 +284,10 @@ let renderIngredient ingredient =
     ]
 
 let renderRecipe dispatch index (recipe: Recipe) isSelected isExpanded =
-    let (cardClass, headerClass, bodyClass, buttonClass) =
+    let (cardClass, headerClass, bodyClass, buttonClass, anchorClass) =
         if isSelected
-            then "card border-success", "card-header text-white bg-success", "card-body text-white bg-success", "btn btn-light text-success"
-            else "card", "card-header", "card-body", "btn btn-info"
+            then "card border-success", "card-header text-white bg-success", "card-body text-white bg-success", "btn btn-light text-success", "text-white"
+            else "card", "card-header", "card-body", "btn btn-info", ""
 
     let ingredientsInInput = recipe.Ingredients |> Array.filter (fun i -> i.IsInputMatch)
     let otherIngredients = recipe.Ingredients |> Array.filter (fun i -> not i.IsInputMatch)
@@ -319,6 +319,13 @@ let renderRecipe dispatch index (recipe: Recipe) isSelected isExpanded =
                         if isExpanded then
                             for i in otherIngredients do
                                 renderIngredient i
+
+                            Html.anchor [
+                                prop.href recipe.Uri
+                                prop.className anchorClass
+                                prop.target "blank"
+                                prop.text "View an AllRecipes.com"
+                            ]
                         else
                             Html.text (sprintf "+ %i other ingredients" otherIngredients.Length)
                     ]
