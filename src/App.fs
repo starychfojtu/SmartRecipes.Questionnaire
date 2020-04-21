@@ -26,6 +26,7 @@ type State = {
     User: User
     Scenarios: RecommendationScenario array
     SelectedRecipeIds: Map<ScenarioIndex, Set<RecipeId>>
+    ExpandedRecipeIds: Map<ScenarioIndex, Set<RecipeId>>
     MethodRatings: Map<MethodIndex, MethodOpinion>
     CurrentPage: Page
     StartUtc: DateTime
@@ -38,7 +39,7 @@ type Msg =
     | ShowTutorial
     | Start
     | ToggleRecipe of MethodIndex * RecipeId
-    | ViewRecipe of MethodIndex * RecipeId
+    | ToggleRecipeView of MethodIndex * RecipeId
     | RateMethod of MethodIndex * MethodOpinion
     | FinishScenario of int
     | ErrorOccured of exn
@@ -55,6 +56,7 @@ let init =
             Email = ""
         }
         Scenarios = [||]
+        ExpandedRecipeIds = Map.empty
         SelectedRecipeIds = Map.empty
         MethodRatings = Map.empty
         CurrentPage = Intro
@@ -126,7 +128,7 @@ let update (msg: Msg) (state: State) =
     | DataLoaded scenarios ->
         let randomizedScenarios = scenarios |> Array.map (fun s -> { s with Recommendations = s.Recommendations |> Seq.filter useMethod |> randomize |> Seq.toArray })
         let emptySelectedRecipes = scenarios |> Array.mapi (fun index _ -> (index, Set.empty)) |> Map.ofArray
-        ({ state with Scenarios = randomizedScenarios; SelectedRecipeIds = emptySelectedRecipes }, Cmd.none)
+        ({ state with Scenarios = randomizedScenarios; SelectedRecipeIds = emptySelectedRecipes; ExpandedRecipeIds = emptySelectedRecipes }, Cmd.none)
     | UserChanged (name, email) ->
         ({ state with User = { state.User with Name = name; Email = email } }, Cmd.none)
     | ShowTutorial ->
@@ -154,12 +156,23 @@ let update (msg: Msg) (state: State) =
         let interactionCommand = Cmd.OfPromise.either interaction recipeId (fun _ -> Noop) (fun error -> ErrorOccured error)
 
         ({ state with SelectedRecipeIds = Map.add index.ScenarioIndex newSelectedRecipeIds state.SelectedRecipeIds }, interactionCommand)
-    | ViewRecipe (index, recipeId) ->
-        let methodPosition = getMethodPosition index state.Scenarios
-        let interaction = sendRecipeToggledInteraction Viewed methodPosition state.User index
-        let interactionCommand = Cmd.OfPromise.either interaction recipeId (fun _ -> Noop) (fun error -> ErrorOccured error)
+    | ToggleRecipeView (index, recipeId) ->
+        let expandedRecipeIds = Map.find index.ScenarioIndex state.ExpandedRecipeIds
+        let isAlreadyExpanded = Set.contains recipeId expandedRecipeIds
+        let newSelectedRecipeIds =
+            if isAlreadyExpanded
+                then Set.remove recipeId expandedRecipeIds
+                else Set.add recipeId expandedRecipeIds
 
-        (state, interactionCommand)
+        let command =
+            if isAlreadyExpanded
+                then Cmd.none
+                else
+                    let methodPosition = getMethodPosition index state.Scenarios
+                    let interaction = sendRecipeToggledInteraction Viewed methodPosition state.User index
+                    Cmd.OfPromise.either interaction recipeId (fun _ -> Noop) (fun error -> ErrorOccured error)
+
+        ({ state with ExpandedRecipeIds = Map.add index.ScenarioIndex newSelectedRecipeIds state.ExpandedRecipeIds }, command)
     | RateMethod (index, opinion) ->
         let methodPosition = getMethodPosition index state.Scenarios
         let interaction = sendMethodInteraction opinion methodPosition state.User
@@ -270,11 +283,11 @@ let renderIngredient ingredient =
         Html.text ingredient.DisplayLine
     ]
 
-let renderRecipe dispatch index (recipe: Recipe) isSelected =
-    let (cardClass, headerClass, bodyClass, anchorClass) =
+let renderRecipe dispatch index (recipe: Recipe) isSelected isExpanded =
+    let (cardClass, headerClass, bodyClass, buttonClass) =
         if isSelected
-            then "card border-success", "card-header text-white bg-success", "card-body text-white bg-success", "text-white"
-            else "card", "card-header", "card-body", ""
+            then "card border-success", "card-header text-white bg-success", "card-body text-white bg-success", "btn btn-light text-success"
+            else "card", "card-header", "card-body", "btn btn-info"
 
     let ingredientsInInput = recipe.Ingredients |> Array.filter (fun i -> i.IsInputMatch)
     let otherIngredients = recipe.Ingredients |> Array.filter (fun i -> not i.IsInputMatch)
@@ -302,8 +315,12 @@ let renderRecipe dispatch index (recipe: Recipe) isSelected =
                     for i in ingredientsInInput  do
                         renderIngredient i
 
-                    Html.div[
-                        Html.text (sprintf "+ %i other ingredients" otherIngredients.Length)
+                    Html.div [
+                        if isExpanded then
+                            for i in otherIngredients do
+                                renderIngredient i
+                        else
+                            Html.text (sprintf "+ %i other ingredients" otherIngredients.Length)
                     ]
 
                     Html.div [
@@ -311,14 +328,12 @@ let renderRecipe dispatch index (recipe: Recipe) isSelected =
                             style.marginTop 25
                         ]
                         prop.children [
-                            Html.a [
-                                prop.href recipe.Uri
-                                prop.target "blank"
-                                prop.className anchorClass
+                            Html.button [
+                                prop.className buttonClass
                                 prop.onClick (fun e ->
                                     e.stopPropagation ()
-                                    dispatch <|  ViewRecipe (index, recipe.Id))
-                                prop.text "See whole recipe"
+                                    dispatch <| ToggleRecipeView (index, recipe.Id))
+                                prop.text (if isExpanded then "Show less" else "Show more")
                             ]
                         ]
                     ]
@@ -338,11 +353,11 @@ let methodAliases = Map.ofList [
 
 let recipeViewCount = 6
 
-let renderMethod dispatch index (method: RecommendationMethod) selectedRecipeIds =
+let renderMethod dispatch index (method: RecommendationMethod) selectedRecipeIds expandedRecipeIds =
     Html.styledDiv "col-2" [
         Html.h3 (Map.find method.Id methodAliases)
         for recipe in method.Recommendations |> Seq.take recipeViewCount do
-            renderRecipe dispatch index recipe (Set.contains recipe.Id selectedRecipeIds)
+            renderRecipe dispatch index recipe (Set.contains recipe.Id selectedRecipeIds) (Set.contains recipe.Id expandedRecipeIds)
     ]
 
 let renderMethodRating dispatch methodIndex (method: RecommendationMethod) (currentOpinion: MethodOpinion option) likedRecipeIds inputCount =
@@ -407,7 +422,7 @@ let renderMethodRating dispatch methodIndex (method: RecommendationMethod) (curr
         ]
     ]
 
-let scenarioPage dispatch index totalScenarios scenario selectedRecipeIds methodRatings =
+let scenarioPage dispatch index totalScenarios scenario selectedRecipeIds expandedRecipeIds methodRatings =
     Html.div [
         Html.styledDiv "container-fluid" [
             Html.h3 (sprintf "Scenario (%i/%i):" (index + 1) totalScenarios)
@@ -426,7 +441,7 @@ let scenarioPage dispatch index totalScenarios scenario selectedRecipeIds method
                             ScenarioIndex = index
                             MethodId = method.Id
                         }
-                        renderMethod dispatch methodIndex method selectedRecipeIds
+                        renderMethod dispatch methodIndex method selectedRecipeIds expandedRecipeIds
                 ]
             ]
         ]
@@ -479,7 +494,7 @@ let render (state: State) (dispatch: Msg -> unit) =
     | Tutorial -> tutorialPage dispatch
     | Scenario index ->
         let scenario = state.Scenarios.[index]
-        scenarioPage dispatch index (Array.length state.Scenarios) scenario (Map.find index state.SelectedRecipeIds) state.MethodRatings
+        scenarioPage dispatch index (Array.length state.Scenarios) scenario (Map.find index state.SelectedRecipeIds) (Map.find index state.ExpandedRecipeIds) state.MethodRatings
     | End -> lastPage
 
 Program.mkProgram (fun _ -> (init, Cmd.ofMsg LoadData)) update render
