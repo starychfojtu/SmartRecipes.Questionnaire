@@ -148,10 +148,10 @@ let renderIngredient ingredient =
     ]
 
 let renderRecipe dispatch index (recipe: Recipe) isSelected =
-    let (cardClass, headerClass) =
+    let (cardClass, headerClass, bodyClass, anchorClass) =
         if isSelected
-            then "card border-success", "card-header text-white bg-success"
-            else "card", "card-header"
+            then "card border-success", "card-header text-white bg-success", "card-body text-white bg-success", "text-white"
+            else "card", "card-header", "card-body", ""
 
     Html.div [
         prop.className cardClass
@@ -171,7 +171,7 @@ let renderRecipe dispatch index (recipe: Recipe) isSelected =
                 prop.alt recipe.Name
             ]
             Html.div [
-                prop.className "card-body"
+                prop.className bodyClass
                 prop.children [
                     for i in recipe.Ingredients do
                         renderIngredient i
@@ -184,6 +184,7 @@ let renderRecipe dispatch index (recipe: Recipe) isSelected =
                             Html.a [
                                 prop.href recipe.Uri
                                 prop.target "blank"
+                                prop.className anchorClass
                                 prop.onClick (fun e -> e.stopPropagation ())
                                 prop.text "See whole recipe"
                             ]
