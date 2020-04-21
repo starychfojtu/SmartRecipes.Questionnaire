@@ -233,9 +233,7 @@ let initPage dispatch user =
 
 let renderIngredient ingredient =
     Html.div [
-        if ingredient.IsInputMatch
-            then Html.strong ingredient.DisplayLine
-            else Html.text ingredient.DisplayLine
+        Html.text ingredient.DisplayLine
     ]
 
 let renderRecipe dispatch index (recipe: Recipe) isSelected =
@@ -243,6 +241,9 @@ let renderRecipe dispatch index (recipe: Recipe) isSelected =
         if isSelected
             then "card border-success", "card-header text-white bg-success", "card-body text-white bg-success", "text-white"
             else "card", "card-header", "card-body", ""
+
+    let ingredientsInInput = recipe.Ingredients |> Array.filter (fun i -> i.IsInputMatch)
+    let otherIngredients = recipe.Ingredients |> Array.filter (fun i -> not i.IsInputMatch)
 
     Html.div [
         prop.className cardClass
@@ -264,8 +265,12 @@ let renderRecipe dispatch index (recipe: Recipe) isSelected =
             Html.div [
                 prop.className bodyClass
                 prop.children [
-                    for i in recipe.Ingredients do
+                    for i in ingredientsInInput  do
                         renderIngredient i
+
+                    Html.div[
+                        Html.text (sprintf "+ %i other ingredients" otherIngredients.Length)
+                    ]
 
                     Html.div [
                         prop.style [
@@ -297,10 +302,12 @@ let methodAliases = Map.ofList [
     ("f2v-256-10", "Zeta")
 ]
 
+let recipeViewCount = 6
+
 let renderMethod dispatch index (method: RecommendationMethod) selectedRecipeIds =
     Html.styledDiv "col-2" [
         Html.h3 (Map.find method.Id methodAliases)
-        for recipe in method.Recommendations do
+        for recipe in method.Recommendations |> Seq.take recipeViewCount do
             renderRecipe dispatch index recipe (Set.contains recipe.Id selectedRecipeIds)
     ]
 
@@ -360,13 +367,19 @@ let scenarioPage dispatch index totalScenarios scenario selectedRecipeIds method
             Html.h3 "Your basket contains:"
             Html.unorderedList (scenario.Input |> Array.map Html.listItem)
 
-            Html.styledDiv "row" [
-                for method in scenario.Recommendations do
-                    let methodIndex = {
-                        ScenarioIndex = index
-                        MethodId = method.Id
-                    }
-                    renderMethod dispatch methodIndex method selectedRecipeIds
+            Html.div [
+                prop.className "row"
+                prop.style [
+                    style.paddingBottom 200
+                ]
+                prop.children [
+                    for method in scenario.Recommendations do
+                        let methodIndex = {
+                            ScenarioIndex = index
+                            MethodId = method.Id
+                        }
+                        renderMethod dispatch methodIndex method selectedRecipeIds
+                ]
             ]
         ]
         Html.footer [
