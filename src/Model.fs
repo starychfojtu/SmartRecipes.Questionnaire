@@ -44,7 +44,7 @@ type MethodOpinion =
     | Average
     | Great
 
-type Interaction = Liked | Disliked
+type RecipeInteraction = Liked | Disliked | Viewed
 
 type MousePosition = {
     X: int
@@ -62,11 +62,24 @@ type Metadata = {
     TimeStamp: DateTime
 }
 
-type InteractionEvent = {
-    Interaction: Interaction
-    MethodId: RecommendationMethodId
+type InteractionData = {
+    ScenarioIndex: int
+    Metadata: Metadata
+    User: User
+}
+
+type RecipeInteractionEvent = {
+    RecipeInteraction: RecipeInteraction
     RecipeId: RecipeId
     RecipeUri: Uri
-    UserName: string
-    Metadata: Metadata
+    MethodId: RecommendationMethodId
+    Data: InteractionData
 }
+
+type MethodInteractionEvent = {
+    MethodRating: MethodOpinion
+    MethodId: RecommendationMethodId
+    Data: InteractionData
+}
+
+type Interaction = RecipeInteractionEvent | MethodInteractionEvent
