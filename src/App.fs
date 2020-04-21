@@ -250,7 +250,7 @@ let tutorialPage dispatch =
                     This survey helps to pick the right method to do that."
                 Html.p
                     @"There will be 6 scenarios. In each scenario, your shopping basket is given alongside with some situation about your intentions.
-                    Then there are 6 methods (named Alpha, Beta..) recommending you recipes. The final application will consist only of a single list, not 6.
+                    Then there are 6 methods (named Alpha, Beta.. and randomly ordered) recommending you recipes. The final application will consist only of a single list, not 6.
                     Thus evaluate them separately in the following way. For each method, go thru its recipes. If you like the recipe based on the basket and scenario, click on it.
                     If you change your mind, just click on it again. At the and of the list, give the method your overall impression (Good/Ok/Bad) at the bottom and move to the next one.
                     There is amount of ingredients actually used in liked recipes displayed above the method rating and number of liked recipes to help you decide."
