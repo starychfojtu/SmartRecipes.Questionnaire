@@ -211,7 +211,7 @@ let renderMethod dispatch index (method: RecommendationMethod) selectedRecipeIds
             renderRecipe dispatch index recipe (Set.contains recipe.Id selectedRecipeIds)
     ]
 
-let renderMethodRating dispatch methodIndex (method: RecommendationMethod) (currentOpinion: MethodOpinion option) =
+let renderMethodRating dispatch methodIndex (method: RecommendationMethod) (currentOpinion: MethodOpinion option) recipesLiked =
     let nameClassName =
         match currentOpinion with
         | Some Great -> "text-success"
@@ -223,6 +223,9 @@ let renderMethodRating dispatch methodIndex (method: RecommendationMethod) (curr
         Html.h3 [
             prop.className nameClassName
             prop.text (Map.find method.Id methodAliases)
+        ]
+        Html.p [
+            prop.text (sprintf "%i Recipes liked" recipesLiked)
         ]
         Html.button [
             prop.className "btn btn-success"
@@ -295,7 +298,9 @@ let scenarioPage dispatch index totalScenarios scenario selectedRecipeIds method
                             ScenarioIndex = index
                             MethodId = method.Id
                         }
-                        renderMethodRating dispatch methodIndex method (Map.tryFind methodIndex methodRatings)
+                        let methodRecipes = method.Recommendations |> Array.map (fun r -> r.Id) |> Set.ofArray
+                        let recipesLiked = Set.intersect selectedRecipeIds methodRecipes |> Set.count
+                        renderMethodRating dispatch methodIndex method (Map.tryFind methodIndex methodRatings) recipesLiked
                 ]
                 Html.button [
                     prop.onClick (fun _ -> dispatch <| FinishScenario index)
