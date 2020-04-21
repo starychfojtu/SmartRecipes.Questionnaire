@@ -36,6 +36,7 @@ type Msg =
     | UserChanged of string * string
     | Start
     | ToggleRecipe of MethodIndex * RecipeId
+    | ViewRecipe of MethodIndex * RecipeId
     | RateMethod of MethodIndex * MethodOpinion
     | FinishScenario of int
     | ErrorOccured of exn
@@ -149,6 +150,12 @@ let update (msg: Msg) (state: State) =
         let interactionCommand = Cmd.OfPromise.either interaction recipeId (fun _ -> Noop) (fun error -> ErrorOccured error)
 
         ({ state with SelectedRecipeIds = Map.add index.ScenarioIndex newSelectedRecipeIds state.SelectedRecipeIds }, interactionCommand)
+    | ViewRecipe (index, recipeId) ->
+        let methodPosition = getMethodPosition index state.Scenarios
+        let interaction = sendRecipeToggledInteraction Viewed methodPosition state.User index
+        let interactionCommand = Cmd.OfPromise.either interaction recipeId (fun _ -> Noop) (fun error -> ErrorOccured error)
+
+        (state, interactionCommand)
     | RateMethod (index, opinion) ->
         let methodPosition = getMethodPosition index state.Scenarios
         let interaction = sendMethodInteraction opinion methodPosition state.User
@@ -269,7 +276,9 @@ let renderRecipe dispatch index (recipe: Recipe) isSelected =
                                 prop.href recipe.Uri
                                 prop.target "blank"
                                 prop.className anchorClass
-                                prop.onClick (fun e -> e.stopPropagation ())
+                                prop.onClick (fun e ->
+                                    e.stopPropagation ()
+                                    dispatch <|  ViewRecipe (index, recipe.Id))
                                 prop.text "See whole recipe"
                             ]
                         ]
