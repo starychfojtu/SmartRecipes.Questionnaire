@@ -212,7 +212,8 @@ let renderMethod dispatch index (method: RecommendationMethod) selectedRecipeIds
 let renderMethodRating dispatch methodIndex (method: RecommendationMethod) (currentOpinion: MethodOpinion option) =
     let nameClassName =
         match currentOpinion with
-        | Some Good -> "text-success"
+        | Some Great -> "text-success"
+        | Some Average -> "text-info"
         | Some Bad -> "text-danger"
         | _ -> ""
 
@@ -223,12 +224,21 @@ let renderMethodRating dispatch methodIndex (method: RecommendationMethod) (curr
         ]
         Html.button [
             prop.className "btn btn-success"
-            prop.disabled (match currentOpinion with Some Good -> true | _ -> false)
-            prop.onClick (fun _ -> dispatch (RateMethod (methodIndex, Good)))
+            prop.disabled (match currentOpinion with Some Great -> true | _ -> false)
+            prop.onClick (fun _ -> dispatch (RateMethod (methodIndex, Great)))
             prop.style [
                 style.margin 4
             ]
-            prop.text "Good :)"
+            prop.text "Great"
+        ]
+        Html.button [
+            prop.className "btn btn-info"
+            prop.disabled (match currentOpinion with Some Average -> true | _ -> false)
+            prop.onClick (fun _ -> dispatch (RateMethod (methodIndex, Average)))
+            prop.style [
+                style.margin 4
+            ]
+            prop.text "Ok"
         ]
         Html.button [
             prop.className "btn btn-danger"
@@ -237,7 +247,7 @@ let renderMethodRating dispatch methodIndex (method: RecommendationMethod) (curr
             prop.style [
                 style.margin 4
             ]
-            prop.text "Bad :("
+            prop.text "Bad"
         ]
     ]
 

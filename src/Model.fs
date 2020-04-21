@@ -40,7 +40,8 @@ type User = {
 
 type MethodOpinion =
     | Bad
-    | Good
+    | Average
+    | Great
 
 type Interaction = Liked | Disliked
 
