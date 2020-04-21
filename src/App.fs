@@ -35,10 +35,11 @@ type Msg =
     | DataLoaded of RecommendationScenario array
     | UserChanged of string * string
     | Start
-    | ToggleRecipe of ScenarioIndex * RecipeId
+    | ToggleRecipe of MethodIndex * RecipeId
     | RateMethod of MethodIndex * MethodOpinion
     | FinishScenario of int
-    | ErrorOccured of string
+    | ErrorOccured of exn
+    | Noop
 
 let loadData () =
     fetch "data.json" [] |> Promise.bind (fun r -> r.json<RecommendationScenario array>())
@@ -70,10 +71,29 @@ let randomize sqn =
         }
     scramble sqn
 
+let sendRecipeToggledInteraction interaction methodIndexFromLeft user index recipeId =
+    let interaction = {
+        RecipeInteraction = interaction
+        RecipeId = recipeId
+        MethodId = index.MethodId
+        Data = {
+            ScenarioIndex = index.ScenarioIndex
+            MethodIndexFromLeft = methodIndexFromLeft
+            User = user
+            TimeStamp = DateTime.UtcNow
+        }
+    }
+
+    Interactions.send (Interaction.Recipe interaction)
+
+let getMethodPosition methodIndex (scenarios: RecommendationScenario[]) =
+    let scenario = scenarios.[methodIndex.ScenarioIndex]
+    scenario.Recommendations |> Array.findIndex (fun r -> r.Id = methodIndex.MethodId)
+
 let update (msg: Msg) (state: State) =
     match msg with
     | LoadData ->
-        (state, Cmd.OfPromise.either loadData () DataLoaded (fun error -> ErrorOccured error.Message))
+        (state, Cmd.OfPromise.either loadData () DataLoaded ErrorOccured)
     | DataLoaded scenarios ->
         let randomizedScenarios = scenarios |> Array.map (fun s -> { s with Recommendations = randomize s.Recommendations |> Seq.toArray })
         let emptySelectedRecipes = scenarios |> Array.mapi (fun index _ -> (index, Set.empty)) |> Map.ofArray
@@ -90,17 +110,25 @@ let update (msg: Msg) (state: State) =
             then ({ state with CurrentPage = End }, Cmd.none)
             else ({ state with CurrentPage = (Scenario <| index + 1) }, Cmd.none)
     | ToggleRecipe (index, recipeId) ->
-        let selectedRecipeIds = Map.find index state.SelectedRecipeIds
+        let selectedRecipeIds = Map.find index.ScenarioIndex state.SelectedRecipeIds
+        let isAlreadySelected = Set.contains recipeId selectedRecipeIds
         let newSelectedRecipeIds =
-            if Set.contains recipeId selectedRecipeIds
+            if isAlreadySelected
                 then Set.remove recipeId selectedRecipeIds
                 else Set.add recipeId selectedRecipeIds
 
-        ({ state with SelectedRecipeIds = Map.add index newSelectedRecipeIds state.SelectedRecipeIds }, Cmd.none)
+        let recipeInteraction = if isAlreadySelected then Disliked else Liked
+        let methodPosition = getMethodPosition index state.Scenarios
+        let interaction = sendRecipeToggledInteraction recipeInteraction methodPosition state.User index
+        let interactionCommand = Cmd.OfPromise.either interaction recipeId (fun _ -> Noop) (fun error -> ErrorOccured error)
+
+        ({ state with SelectedRecipeIds = Map.add index.ScenarioIndex newSelectedRecipeIds state.SelectedRecipeIds }, interactionCommand)
     | RateMethod (index, opinion) ->
         ({ state with MethodRatings = Map.add index opinion state.MethodRatings }, Cmd.none)
     | ErrorOccured s ->
-        window.alert (sprintf "Error occurred, please contact josef.starychfojtu@gmail.com with this: %s" s)
+        window.alert (sprintf "Error occurred, please contact josef.starychfojtu@gmail.com with this and screen of console: %s %s" s.Message s.StackTrace)
+        (state, Cmd.none)
+    | Noop ->
         (state, Cmd.none)
 
 module Html =
@@ -308,7 +336,11 @@ let scenarioPage dispatch index totalScenarios scenario selectedRecipeIds method
 
             Html.styledDiv "row" [
                 for method in methods do
-                    renderMethod dispatch index method selectedRecipeIds
+                    let methodIndex = {
+                        ScenarioIndex = index
+                        MethodId = method.Id
+                    }
+                    renderMethod dispatch methodIndex method selectedRecipeIds
             ]
         ]
         Html.footer [

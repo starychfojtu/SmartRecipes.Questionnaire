@@ -46,32 +46,16 @@ type MethodOpinion =
 
 type RecipeInteraction = Liked | Disliked | Viewed
 
-type MousePosition = {
-    X: int
-    Y: int
-}
-
-type RecipePosition = {
-    MethodPositionFromLeft: int
-    RecipePositionInMethod: int
-}
-
-type Metadata = {
-    MousePosition: MousePosition
-    RecipePosition: RecipePosition
-    TimeStamp: DateTime
-}
-
 type InteractionData = {
     ScenarioIndex: int
-    Metadata: Metadata
+    MethodIndexFromLeft: int
     User: User
+    TimeStamp: DateTime
 }
 
 type RecipeInteractionEvent = {
     RecipeInteraction: RecipeInteraction
     RecipeId: RecipeId
-    RecipeUri: Uri
     MethodId: RecommendationMethodId
     Data: InteractionData
 }
@@ -82,4 +66,4 @@ type MethodInteractionEvent = {
     Data: InteractionData
 }
 
-type Interaction = RecipeInteractionEvent | MethodInteractionEvent
+type Interaction = Recipe of RecipeInteractionEvent | Method of MethodInteractionEvent
