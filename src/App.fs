@@ -5,8 +5,6 @@ open Elmish
 open Elmish.React
 open Model
 open System
-open System
-open System
 open FSharp.Core
 open Feliz
 open Fetch
@@ -40,6 +38,7 @@ type Msg =
     | ToggleRecipe of ScenarioIndex * RecipeId
     | RateMethod of MethodIndex * MethodOpinion
     | FinishScenario of int
+    | ErrorOccured of string
 
 let loadData () =
     fetch "data.json" [] |> Promise.bind (fun r -> r.json<RecommendationScenario array>())
@@ -74,7 +73,7 @@ let randomize sqn =
 let update (msg: Msg) (state: State) =
     match msg with
     | LoadData ->
-        (state, Cmd.OfPromise.either loadData () DataLoaded (fun error -> DataLoaded [||]))
+        (state, Cmd.OfPromise.either loadData () DataLoaded (fun error -> ErrorOccured error.Message))
     | DataLoaded scenarios ->
         let randomizedScenarios = scenarios |> Array.map (fun s -> { s with Recommendations = randomize s.Recommendations |> Seq.toArray })
         let emptySelectedRecipes = scenarios |> Array.mapi (fun index _ -> (index, Set.empty)) |> Map.ofArray
@@ -100,6 +99,9 @@ let update (msg: Msg) (state: State) =
         ({ state with SelectedRecipeIds = Map.add index newSelectedRecipeIds state.SelectedRecipeIds }, Cmd.none)
     | RateMethod (index, opinion) ->
         ({ state with MethodRatings = Map.add index opinion state.MethodRatings }, Cmd.none)
+    | ErrorOccured s ->
+        window.alert (sprintf "Error occurred, please contact josef.starychfojtu@gmail.com with this: %s" s)
+        (state, Cmd.none)
 
 module Html =
     let styledDiv (className: string) (children: ReactElement seq) =
