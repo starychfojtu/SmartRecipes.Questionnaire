@@ -104,12 +104,24 @@ let getMethodPosition methodIndex (scenarios: RecommendationScenario[]) =
     let scenario = scenarios.[methodIndex.ScenarioIndex]
     scenario.Recommendations |> Array.findIndex (fun r -> r.Id = methodIndex.MethodId)
 
+let allowedMethodIds = [
+    "f2v-256-10-tf-idf-cal";
+    "f2v-256-10-tf-idf-mmr";
+    "tf-idf-cal";
+    "tf-idf-mmr";
+    "tf-idf";
+    "f2v-256-10";
+]
+
+let useMethod (method: RecommendationMethod) =
+    List.contains method.Id allowedMethodIds
+
 let update (msg: Msg) (state: State) =
     match msg with
     | LoadData ->
         (state, Cmd.OfPromise.either loadData () DataLoaded ErrorOccured)
     | DataLoaded scenarios ->
-        let randomizedScenarios = scenarios |> Array.map (fun s -> { s with Recommendations = randomize s.Recommendations |> Seq.toArray })
+        let randomizedScenarios = scenarios |> Array.map (fun s -> { s with Recommendations = s.Recommendations |> Seq.filter useMethod |> randomize |> Seq.toArray })
         let emptySelectedRecipes = scenarios |> Array.mapi (fun index _ -> (index, Set.empty)) |> Map.ofArray
         ({ state with Scenarios = randomizedScenarios; SelectedRecipeIds = emptySelectedRecipes }, Cmd.none)
     | UserChanged (name, email) ->
@@ -331,20 +343,7 @@ let renderMethodRating dispatch methodIndex (method: RecommendationMethod) (curr
         ]
     ]
 
-let allowedMethodIds = [
-    "f2v-256-10-tf-idf-cal";
-    "f2v-256-10-tf-idf-mmr";
-    "tf-idf-cal";
-    "tf-idf-mmr";
-    "tf-idf";
-    "f2v-256-10";
-]
-
-let showMethod (method: RecommendationMethod) =
-    List.contains method.Id allowedMethodIds
-
 let scenarioPage dispatch index totalScenarios scenario selectedRecipeIds methodRatings =
-    let methods = scenario.Recommendations |> Array.filter showMethod
     Html.div [
         Html.styledDiv "container-fluid" [
             Html.h3 (sprintf "Scenario (%i/%i):" (index + 1) totalScenarios)
@@ -353,7 +352,7 @@ let scenarioPage dispatch index totalScenarios scenario selectedRecipeIds method
             Html.unorderedList (scenario.Input |> Array.map Html.listItem)
 
             Html.styledDiv "row" [
-                for method in methods do
+                for method in scenario.Recommendations do
                     let methodIndex = {
                         ScenarioIndex = index
                         MethodId = method.Id
@@ -372,7 +371,7 @@ let scenarioPage dispatch index totalScenarios scenario selectedRecipeIds method
             ]
             prop.children [
                 Html.styledDiv "row" [
-                    for method in methods do
+                    for method in scenario.Recommendations do
                         let methodIndex = {
                             ScenarioIndex = index
                             MethodId = method.Id
